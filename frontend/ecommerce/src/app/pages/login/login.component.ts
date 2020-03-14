@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Credentials } from 'src/app/models/auth';
 import { ToasterService } from 'angular2-toaster';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,7 @@ import { ToasterService } from 'angular2-toaster';
 export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
+  public faCoffee = faCoffee;
 
   constructor(
     private formBuilder: FormBuilder,

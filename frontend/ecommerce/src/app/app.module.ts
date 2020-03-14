@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { ToasterModule } from 'angular2-toaster';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -27,6 +28,7 @@ import { DashboardModule } from './pages/dashboard/dashboard.module';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    FontAwesomeModule,
     RegisterModule,
     ToasterModule.forRoot(),
     LoginModule,
