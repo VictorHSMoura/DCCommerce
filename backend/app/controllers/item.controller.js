@@ -2,23 +2,23 @@ const db = require("../models");
 const Item = db.item;
 const Op = db.Sequelize.Op;
 
-// Create and Save a new Item
+// Criar e salvar um item
 exports.create = (req, res) => {
-    // Validate request
+    // Validar requisição
     if (!req.body.description) {
       res.status(400).send({
-        message: "Content can not be empty!"
+        message: "Campos não podem ser vazios!"
       });
       return;
     }
   
-    // Create a Item
+    // Criar um item
     const item = {
         description: req.body.description,
         active: req.body.active ? req.body.active : false
     };
   
-    // Save Item in the database
+    // Salvar item no banco
     Item.create(item)
       .then(data => {
         res.send(data);
@@ -26,12 +26,12 @@ exports.create = (req, res) => {
       .catch(err => {
         res.status(500).send({
           message:
-            err.message || "Some error occurred while creating the Item."
+            err.message || "Algum erro ocorreu ao salvar."
         });
       });
   };
 
-// Retrieve all Items from the database.
+// Listar todos os itens do banco.
 exports.findAll = (req, res) => {
     const description = req.query.description;
     var condition = description ? { description: { [Op.like]: `%${description}%` } } : null;
@@ -43,12 +43,12 @@ exports.findAll = (req, res) => {
       .catch(err => {
         res.status(500).send({
           message:
-            err.message || "Some error occurred while retrieving items."
+            err.message || "Algum erro ocorreu ao listar."
         });
       });
   };
 
-// Find a single Item with an id
+// Encontrar um item por id
 exports.findOne = (req, res) => {
     const id = req.params.id;
   
@@ -58,12 +58,12 @@ exports.findOne = (req, res) => {
       })
       .catch(err => {
         res.status(500).send({
-          message: "Error retrieving Item with id=" + id
+          message: "Algum erro ocorreu ao recuperar item de id=" + id
         });
       });
   };
 
-// Update a Item by the id in the request
+// Atualizar item por id
 exports.update = (req, res) => {
     const id = req.params.id;
   
@@ -73,22 +73,22 @@ exports.update = (req, res) => {
       .then(num => {
         if (num == 1) {
           res.send({
-            message: "Item was updated successfully."
+            message: "Item foi atualizado com sucesso."
           });
         } else {
           res.send({
-            message: `Cannot update Item with id=${id}. Maybe Item was not found or req.body is empty!`
+            message: `Não foi possivel atualizar item de id=${id}.`
           });
         }
       })
       .catch(err => {
         res.status(500).send({
-          message: "Error updating Item with id=" + id
+          message: "Não foi possivel atualizar item de id=" + id
         });
       });
   };
   
-
+//deletar itens
   exports.delete = (req, res) => {
     const id = req.params.id;
   
@@ -98,17 +98,17 @@ exports.update = (req, res) => {
       .then(num => {
         if (num == 1) {
           res.send({
-            message: "Item was deleted successfully!"
+            message: "Item foi deletado com sucesso!"
           });
         } else {
           res.send({
-            message: `Cannot delete Item with id=${id}. Maybe Item was not found!`
+            message: "Não foi possivel deletar item de id=" + id
           });
         }
       })
       .catch(err => {
         res.status(500).send({
-          message: "Could not delete Item with id=" + id
+          message: "Não foi possivel deletar item de id=" + id
         });
       });
   };

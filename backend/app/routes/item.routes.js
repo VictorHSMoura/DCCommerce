@@ -3,19 +3,19 @@ module.exports = app => {
   
     var router = require("express").Router();
   
-    // Create a new Tutorial
+    // Criar item
     router.post("/", item.create);
   
-    // Retrieve all Tutorials
+    // Listar todos os itens
     router.get("/", item.findAll);
   
-    // Retrieve a single Tutorial with id
+    // Listar item por id
     router.get("/:id", item.findOne);
   
-    // Update a Tutorial with id
+    // Atualizar item
     router.put("/:id", item.update);
   
-    // Delete a Tutorial with id
+    // Deletar item
     router.delete("/:id", item.delete);
   
     app.use('/api/item', router);
