@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { LoggedGuard } from './guards/logged/logged.guard';
 
 const routes: Routes = [
   {
@@ -13,17 +14,16 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    // canActivate: [LoggedGuard],
+    canActivate: [LoggedGuard],
   },
   {
     path: 'register',
     component: RegisterComponent,
-    // canActivate: [LoggedGuard],
+    canActivate: [LoggedGuard],
   },
   {
     path: 'dashboard',
     component: DashboardComponent,
-    // canActivate: [AuthGuard],
   },
 
   { path: '**', redirectTo: 'dashboard' },
