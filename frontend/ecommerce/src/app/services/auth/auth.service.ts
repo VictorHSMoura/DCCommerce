@@ -33,6 +33,10 @@ export class AuthService {
     }
   }
 
+  public async resetPassword({ email }): Promise<void> {
+    await firebase.auth().sendPasswordResetEmail(email);
+  }
+
   public async loginUser(value: Credentials): Promise<firebase.auth.UserCredential> {
     const res: firebase.auth.UserCredential = await firebase.auth().signInWithEmailAndPassword(value.email, value.password);
     return res;

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Credentials, User } from 'src/app/models/auth';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/stores/reducers';
 import { authError, setLoggedUser } from 'src/app/stores/auth/auth.actions';
@@ -17,7 +16,6 @@ export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
   public isLoading: boolean;
-  public faCoffee = faCoffee;
 
   constructor(
     private formBuilder: FormBuilder,

@@ -35,6 +35,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { localStorageSync } from 'ngrx-store-localstorage';
 import { effects } from './stores/effects';
 import { reducers } from './stores/reducers';
+import { ForgotPasswordModule } from './pages/forgot-password/forgot-password.module';
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({
@@ -78,6 +79,7 @@ const metaReducers: Array<MetaReducer<any, any>> = [
     ToasterModule.forRoot(),
     LoginModule,
     DashboardModule,
+    ForgotPasswordModule,
   ],
   providers: [
     Storage,
