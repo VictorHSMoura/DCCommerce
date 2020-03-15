@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,29 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'ecommerce';
+
+  public showHeader: boolean = false;
+
+  constructor(
+    private router: Router,
+  ) { }
+
+  private watchRouteChanges(): void {
+    this.router.events.subscribe(
+      async () => {
+        const url = this.router.url;
+        console.log('url', url);
+        if (url === '/' || url === '/login' || url === '/register' || url === '/forgot-password') {
+          this.showHeader = false;
+        } else {
+          this.showHeader = true;
+        }
+      },
+    );
+  }
+
+  ngOnInit() {
+    this.watchRouteChanges();
+  }
+
 }

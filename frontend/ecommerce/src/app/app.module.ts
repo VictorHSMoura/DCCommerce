@@ -7,6 +7,7 @@ import { ToasterModule } from 'angular2-toaster';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClient } from '@angular/common/http';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -36,6 +37,7 @@ import { localStorageSync } from 'ngrx-store-localstorage';
 import { effects } from './stores/effects';
 import { reducers } from './stores/reducers';
 import { ForgotPasswordModule } from './pages/forgot-password/forgot-password.module';
+import { ComponentsModule } from './components/components.module';
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({
@@ -75,10 +77,12 @@ const metaReducers: Array<MetaReducer<any, any>> = [
     AngularFirestoreModule,
     AngularFireAuthModule,
     FontAwesomeModule,
+    AngularFontAwesomeModule,
     RegisterModule,
     ToasterModule.forRoot(),
     LoginModule,
     DashboardModule,
+    ComponentsModule,
     ForgotPasswordModule,
   ],
   providers: [

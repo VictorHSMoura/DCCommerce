@@ -1,3 +1,9 @@
-<router-outlet>
-  <toaster-container></toaster-container>
-</router-outlet>
+<body>
+  <app-header *ngIf="showHeader"></app-header>
+  <article>
+    <router-outlet>
+      <toaster-container></toaster-container>
+    </router-outlet>
+  </article>
+  <app-footer *ngIf="showHeader"></app-footer>
+</body>

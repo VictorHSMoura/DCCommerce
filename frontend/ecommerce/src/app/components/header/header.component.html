@@ -1,0 +1,28 @@
+<header>
+  <nav class="navbar navbar-expand-sm navbar-primary bg-primary">
+    <div class="container justify-content-between">
+      <img
+        alt="Logo"
+        class="navbar-brand"
+        src="assets/images/logos/logo_menu_RGB.png"
+        [routerLink]="['/dashboard']"
+      />
+      <button
+        class="navbar-toggler collapsed"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navCollapsed"
+        aria-controls="navbarCollapse"
+        aria-expanded="false"
+      >
+        <span class="navbar-toggler-icon">
+          <fa class="text-white" name="fas fa-align-right"></fa>
+        </span>
+      </button>
+      <div
+        class="row justify-content-end align-items-center collapse navbar-collapse"
+        id="navCollapsed"
+      ></div>
+    </div>
+  </nav>
+</header>

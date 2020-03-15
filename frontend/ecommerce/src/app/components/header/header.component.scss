@@ -1,0 +1,16 @@
+.navbar {
+    z-index: 4;
+    width: 100%;
+    top: 0;
+    background: linear-gradient(to right, #373B44, #4286f4);
+}
+
+.navbar-brand {
+    width: 4.875rem;
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        outline: none;
+    }
+}
