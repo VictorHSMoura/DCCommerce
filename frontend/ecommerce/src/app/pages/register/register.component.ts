@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToasterService } from 'angular2-toaster';
 import { AuthService } from 'src/app/services/auth/auth.service';
-import { Credentials } from 'src/app/models/auth';
+import { Credentials, User } from 'src/app/models/auth';
+import { setLoggedUser } from 'src/app/stores/auth/auth.actions';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/stores/reducers';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -17,12 +21,26 @@ export class RegisterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private toasterService: ToasterService,
     private authService: AuthService,
+    private store: Store<AppState>,
+    private router: Router,
   ) { }
 
   public async register(): Promise<void> {
     try {
       const value = this.registerForm.value as Credentials;
-      const res = await this.authService.registerUser(value);
+      const reg = await this.authService.registerUser(value);
+
+      const res = await this.authService.loginWrap('email', value);
+      const { displayName, photoURL, email, phoneNumber } = res.user;
+      const user: User = {
+        displayName,
+        photoURL,
+        email,
+        phoneNumber,
+        loginType: 'email',
+      };
+      this.store.dispatch(setLoggedUser({ user }));
+      this.router.navigate(['dashboard']);
     } catch (e) {
       this.toasterService.pop('error', 'Erro no registro', 'Confira suas credenciais ou tente novamente mais tarde');
       console.log('login error', e);
