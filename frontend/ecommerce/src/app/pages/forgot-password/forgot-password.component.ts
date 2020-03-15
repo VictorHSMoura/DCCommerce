@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 import { authError } from 'src/app/stores/auth/auth.actions';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/stores/reducers';
+import { ToasterService } from 'angular2-toaster';
 
 @Component({
   selector: 'app-forgot-password',
@@ -18,6 +19,7 @@ export class ForgotPasswordComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
+    private toasterService: ToasterService,
     private store: Store<AppState>,
   ) { }
 
@@ -26,6 +28,7 @@ export class ForgotPasswordComponent implements OnInit {
     const email = this.forgotPasswordForm.value;
     try {
       await this.authService.resetPassword(email);
+      this.toasterService.pop('success', 'Email enviado');
     } catch (error) {
       this.store.dispatch(authError({ error }));
     }
