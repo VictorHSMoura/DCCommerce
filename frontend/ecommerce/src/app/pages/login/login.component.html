@@ -12,7 +12,7 @@
       required
     />
   </div>
-  <button [disabled]="isLoading$ | async" type="submit" (click)="login()" class="btn btn-default">
+  <button [disabled]="isLoading$ | async" type="submit" (click)="login('email')" class="btn btn-default">
     Logar
   </button>
 
@@ -21,11 +21,11 @@
   </button>
 </form>
 
-<button [disabled]="isLoading$ | async" (click)="loginFacebook()">
+<button [disabled]="isLoading$ | async" (click)="login('facebook')">
   LoginFb
 </button>
 
-<button [disabled]="isLoading$ | async" (click)="loginGoogle()">
+<button [disabled]="isLoading$ | async" (click)="login('google')">
   LoginGoogle
 </button>
 

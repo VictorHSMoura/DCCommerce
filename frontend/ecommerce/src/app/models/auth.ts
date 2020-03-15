@@ -4,5 +4,9 @@ export interface Credentials {
 }
 
 export interface User {
-  
+  displayName: string;
+  photoURL: string;
+  email: string;
+  phoneNumber: string;
+  loginType?: 'facebook' | 'google' | 'email';
 }

@@ -17,7 +17,6 @@ export class AuthService {
 
   public async registerUser(value: Credentials): Promise<firebase.auth.UserCredential> {
     const res: firebase.auth.UserCredential = await firebase.auth().createUserWithEmailAndPassword(value.email, value.password);
-    console.log('email registration', res);
     return res;
   }
 
@@ -28,7 +27,7 @@ export class AuthService {
       case 'google':
         return await this.googleLogin();
       case 'email':
-        return this.loginUser(credentials);
+        return await this.loginUser(credentials);
       default:
         return new Promise((resolve, reject) => reject());
     }
@@ -36,7 +35,6 @@ export class AuthService {
 
   public async loginUser(value: Credentials): Promise<firebase.auth.UserCredential> {
     const res: firebase.auth.UserCredential = await firebase.auth().signInWithEmailAndPassword(value.email, value.password);
-    console.log('email registration', res);
     return res;
   }
 
@@ -45,7 +43,6 @@ export class AuthService {
     provider.addScope('profile');
     provider.addScope('email');
     const res: firebase.auth.UserCredential = await this.afAuth.auth.signInWithPopup(provider);
-    console.log('facebook', res);
     return res;
   }
 
@@ -54,7 +51,6 @@ export class AuthService {
     provider.addScope('profile');
     provider.addScope('email');
     const res = await this.afAuth.auth.signInWithPopup(provider);
-    console.log('google', res);
     return res;
   }
 

@@ -30,11 +30,11 @@ registerLocaleData(pt);
 
 // Ngrx
 import { StoreModule, ActionReducer, MetaReducer } from '@ngrx/store';
-import { reducers } from './stores/reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { localStorageSync } from 'ngrx-store-localstorage';
 import { effects } from './stores/effects';
+import { reducers } from './stores/reducers';
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({
