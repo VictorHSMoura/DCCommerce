@@ -6,6 +6,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/stores/reducers';
 import { authError, setLoggedUser } from 'src/app/stores/auth/auth.actions';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private router: Router,
     private store: Store<AppState>,
     private authService: AuthService,
   ) { }
@@ -38,6 +40,7 @@ export class LoginComponent implements OnInit {
         loginType: method,
       };
       this.store.dispatch(setLoggedUser({ user }));
+      this.router.navigate(['dashboard']);
     } catch (error) {
       this.store.dispatch(authError({ error }));
     }
