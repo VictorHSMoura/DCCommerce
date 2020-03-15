@@ -5,8 +5,6 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/stores/reducers';
 import { authError, setLoggedUser } from 'src/app/stores/auth/auth.actions';
-import { Observable } from 'rxjs';
-import { getAuthIsLoading } from 'src/app/stores/auth/auth.selectors';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
@@ -17,7 +15,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
-  public isLoading$: Observable<boolean>;
+  public isLoading: boolean;
   public faCoffee = faCoffee;
 
   constructor(
@@ -27,6 +25,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   public async login(method: 'email' | 'facebook' | 'google'): Promise<void> {
+    this.isLoading = true;
     const credential = this.loginForm.value as Credentials;
     try {
       const res = await this.authService.loginWrap(method, credential);
@@ -38,10 +37,11 @@ export class LoginComponent implements OnInit {
         phoneNumber,
         loginType: method,
       };
-      localStorage.setItem('loggedUser', JSON.stringify(user));
+      this.store.dispatch(setLoggedUser({ user }));
     } catch (error) {
       this.store.dispatch(authError({ error }));
     }
+    this.isLoading = false;
   }
 
   private initForm(): void {
@@ -53,7 +53,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.initForm();
-    this.isLoading$ = this.store.select(getAuthIsLoading);
   }
 
 }
