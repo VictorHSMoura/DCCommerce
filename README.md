@@ -1,7 +1,7 @@
 # DCCommerce
 Plataforma web para compra e venda de produtos - Trabalho de Engenharia de Software
 
-### Grupo
+## Grupo
 - Davi Braga Tolentino Veloso
 - Júlia Fonseca de Sena
 - Lucas Paulo Martins Mariz
