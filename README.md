@@ -1,6 +1,13 @@
 # DCCommerce
 Plataforma web para compra e venda de produtos - Trabalho de Engenharia de Software
 
+### Grupo
+- Davi Braga Tolentino Veloso
+- Júlia Fonseca de Sena
+- Lucas Paulo Martins Mariz
+- Thales Aparecido Silva Elias
+- Victor Hugo Silva Moura
+
 ## Sprint Planning
 
 ### Histórias
@@ -14,7 +21,7 @@ Plataforma web para compra e venda de produtos - Trabalho de Engenharia de Softw
 - Pedidos em andamento
 
 ### Tarefas
-1. Autenticação do usuário
+1. Autenticação do usuário (Lucas e Victor)
     - Configuração:
         - Configuração do projeto no firebase
         - Configuração do projeto no Facebook Developers Panel
@@ -31,7 +38,7 @@ Plataforma web para compra e venda de produtos - Trabalho de Engenharia de Softw
         - Email de recuperação de senha
         - Cadastro de usuário
 
-2. Listagem de produtos
+2. Listagem de produtos (Thales)
     - Estruturação:
         - Tela principal da listagem de produtos
         - Tela do detalhe de cada produto
@@ -41,13 +48,13 @@ Plataforma web para compra e venda de produtos - Trabalho de Engenharia de Softw
         - Filtragem de produtos
         - Redirecionamento para o detalhe de cada produto
 
-3. Cadastro de produtos
+3. Cadastro de produtos (Victor)
     - Estruturação:
         - Formulário de cadastro de produtos
     - Funcionalidades: 
         - Enviar para o servidor o produto cadastrado
 
-4. Carrinho
+4. Carrinho (Lucas)
     - Estruturação:
         - Tela do carrinho
     - Funcionalidades:
@@ -55,25 +62,25 @@ Plataforma web para compra e venda de produtos - Trabalho de Engenharia de Softw
         - Alterar a quantidade de itens
         - Finalizar a compra
 
-5. Avaliar compras
+5. Avaliar compras (Júlia)
     - Estruturação:
         - Formulário de avaliação de produtos
     - Funcionalidades:
         - CRUD de avaliação
 
-6. Comentários sobre os produtos
+6. Comentários sobre os produtos (Júlia)
     - Estruturação:
         - Formulário de comentário de produtos
     - Funcionalidades:
         - CRUD de comentário
 
-7. Sugestões de produtos
+7. Sugestões de produtos (Davi)
     - Estruturação:
         - Listagem de produtos sugeridos
     - Funcionalidades:
         - GET da listagem de produtos sugeridos
 
-8. Pedidos em andamento
+8. Pedidos em andamento (Davi e Thales)
     - Estruturação:
         - Listagem de pedidos em andamento
         - Tela do detalhe do pedido em andamento
