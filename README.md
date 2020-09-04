@@ -21,7 +21,7 @@ Plataforma web para compra e venda de produtos - Trabalho de Engenharia de Softw
 - Pedidos em andamento
 
 ### Tarefas
-1. Autenticação do usuário (Lucas e Victor)
+1. Autenticação do usuário (Victor)
     - Configuração:
         - Configuração do projeto no firebase
         - Configuração do projeto no Facebook Developers Panel
@@ -54,7 +54,7 @@ Plataforma web para compra e venda de produtos - Trabalho de Engenharia de Softw
     - Funcionalidades: 
         - Enviar para o servidor o produto cadastrado
 
-4. Carrinho (Lucas)
+4. Carrinho (Thales)
     - Estruturação:
         - Tela do carrinho
     - Funcionalidades:
@@ -80,7 +80,7 @@ Plataforma web para compra e venda de produtos - Trabalho de Engenharia de Softw
     - Funcionalidades:
         - GET da listagem de produtos sugeridos
 
-8. Pedidos em andamento (Davi e Thales)
+8. Pedidos em andamento (Davi)
     - Estruturação:
         - Listagem de pedidos em andamento
         - Tela do detalhe do pedido em andamento
