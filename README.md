@@ -4,7 +4,6 @@ Plataforma web para compra e venda de produtos - Trabalho de Engenharia de Softw
 ## Grupo
 - Davi Braga Tolentino Veloso
 - Júlia Fonseca de Sena
-- Lucas Paulo Martins Mariz
 - Thales Aparecido Silva Elias
 - Victor Hugo Silva Moura
 
