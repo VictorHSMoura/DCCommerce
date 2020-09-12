@@ -84,4 +84,4 @@ Plataforma web para compra e venda de produtos - Trabalho de Engenharia de Softw
         - Listagem de pedidos em andamento
         - Tela do detalhe do pedido em andamento
     - Funcionalidades:
-        - GET da listagem de produtos sugeridos
+        - GET da listagem de pedidos em andamento
