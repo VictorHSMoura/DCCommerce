@@ -5,11 +5,14 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoggedGuard } from './guards/logged/logged.guard';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { HomeComponent } from './pages/home/home.component';
+import { RegisterProductComponent } from './pages/register-product/register-product.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/dashboard',
+    redirectTo: '/home',
     pathMatch: 'full',
   },
   {
@@ -31,8 +34,20 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
   },
+  {
+    path: 'cart',
+    component: CartComponent,
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
+  {
+    path: 'register-product',
+    component: RegisterProductComponent,
+  },
 
-  { path: '**', redirectTo: 'dashboard' },
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({

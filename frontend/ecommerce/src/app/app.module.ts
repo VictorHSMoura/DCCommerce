@@ -40,6 +40,9 @@ import { effects } from './stores/effects';
 import { reducers } from './stores/reducers';
 import { ForgotPasswordModule } from './pages/forgot-password/forgot-password.module';
 import { ComponentsModule } from './components/components.module';
+import { CartModule } from './pages/cart/cart.module';
+import { HomeModule } from './pages/home/home.module';
+import { RegisterProductModule } from './pages/register-product/register-product.module';
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({
@@ -86,6 +89,9 @@ const metaReducers: Array<MetaReducer<any, any>> = [
     DashboardModule,
     ComponentsModule,
     ForgotPasswordModule,
+    CartModule,
+    HomeModule,
+    RegisterProductModule,
   ],
   providers: [
     Storage,
