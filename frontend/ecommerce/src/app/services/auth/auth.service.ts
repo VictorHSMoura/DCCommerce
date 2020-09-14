@@ -46,7 +46,7 @@ export class AuthService {
     const provider = new firebase.auth.FacebookAuthProvider();
     provider.addScope('profile');
     provider.addScope('email');
-    const res: firebase.auth.UserCredential = await this.afAuth.auth.signInWithPopup(provider);
+    const res: firebase.auth.UserCredential = await this.afAuth.signInWithPopup(provider);
     return res;
   }
 
@@ -54,7 +54,7 @@ export class AuthService {
     const provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope('profile');
     provider.addScope('email');
-    const res = await this.afAuth.auth.signInWithPopup(provider);
+    const res = await this.afAuth.signInWithPopup(provider);
     return res;
   }
 

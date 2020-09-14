@@ -6,10 +6,10 @@ import { environment } from '../environments/environment';
 import { ToasterModule } from 'angular2-toaster';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient } from '@angular/common/http';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faGithub, faFacebook, faTwitter, faGoogle, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+// import { AngularFontAwesomeModule } from 'angular-font-awesome';
+// import { FontAwesomeModule } from 'font-awesome/';
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { faGithub, faFacebook, faTwitter, faGoogle, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -78,8 +78,8 @@ const metaReducers: Array<MetaReducer<any, any>> = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    FontAwesomeModule,
-    AngularFontAwesomeModule,
+    // FontAwesomeModule,
+    // AngularFontAwesomeModule,
     RegisterModule,
     ToasterModule.forRoot(),
     LoginModule,
@@ -95,6 +95,6 @@ const metaReducers: Array<MetaReducer<any, any>> = [
 })
 export class AppModule {
   constructor() {
-    library.add(faGithub, faFacebook, faTwitter, faGoogle, faLinkedin);
+    // library.add(faGithub, faFacebook, faTwitter, faGoogle, faLinkedin);
   }
 }
