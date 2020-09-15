@@ -8,6 +8,7 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { CartComponent } from './pages/cart/cart.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterProductComponent } from './pages/register-product/register-product.component';
+import { ProductComponent } from './pages/product/product.component';
 
 const routes: Routes = [
   {
@@ -46,7 +47,14 @@ const routes: Routes = [
     path: 'register-product',
     component: RegisterProductComponent,
   },
-
+  {
+    path: 'product', 
+    component: HomeComponent
+  },
+  {
+    path: 'product/:id', 
+    component: ProductComponent
+  },
   { path: '**', redirectTo: 'home' },
 ];
 

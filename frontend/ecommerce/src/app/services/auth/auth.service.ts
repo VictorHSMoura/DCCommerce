@@ -44,9 +44,8 @@ export class AuthService {
 
   public async facebookLogin(): Promise<firebase.auth.UserCredential> {
     const provider = new firebase.auth.FacebookAuthProvider();
-    provider.addScope('profile');
     provider.addScope('email');
-    const res: firebase.auth.UserCredential = await this.afAuth.signInWithPopup(provider);
+    const res: firebase.auth.UserCredential = await firebase.auth().signInWithPopup(provider);
     return res;
   }
 
