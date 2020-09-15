@@ -1,5 +1,65 @@
-<p style="font-size: 60px;
-margin-top: 8vh;
-margin-bottom: 70vh;">
-    Cadastro de produtos em construção!
-</p>
+<div class="register-product">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 mx-auto">
+                <div class="register">
+                    <h5 class="card-register-title text-center">Cadastrar Novo Produto</h5>
+                    <form class="form-register-product" [formGroup]="registerProductForm">
+                        <div class="form-label-group">
+                            <label>Titulo do Produto</label>
+                            <input formControlName="titulo" type="text" placeholder="Titulo do Produto" id="inputTitulo" class="form-control" required autofocus>
+                        </div>
+        
+                        <div class="form-label-group">
+                            <label>Descrição</label>
+                            <textarea
+                                formControlName="descricao_oferta"
+                                placeholder="Descrição"
+                                id="inputDescricao"
+                                class="form-control"
+                                rows="3"
+                                required>
+                            </textarea>
+                        </div>
+
+                        <div class="form-label-group">
+                            <label>Categoria</label>
+                            <select 
+                                class="form-control"
+                                formControlName="categoria"
+                                required
+                            >
+                                <option value="">Selecione uma opção</option>
+                                <option *ngFor="let category of categories" value="{{ category }}">{{ category | uppercase }}</option>
+                            </select>
+                        </div>
+
+                        <div class="form-label-group">
+                            <label>Valor: {{ 
+                                this.registerProductForm.value.valor === '' ? ('0' | currency:'BRL') :
+                                this.registerProductForm.value.valor | currency:'BRL'
+                            }}</label>
+                            <input formControlName="valor" type="number" placeholder="Valor" id="inputValor" class="form-control" required>
+                        </div>
+
+                        <div class="form-label-group">
+                            <label>Imagens</label>
+                            <input #inputs
+                                formControlName="imagens"
+                                type="file"
+                                accept="image/*"
+                                id="inputImagem"
+                                class="form-control"
+                                required
+                                multiple
+                                (change)="teste(inputs)"
+                            >
+                        </div>
+        
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)="cadastrar()" type="submit">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
