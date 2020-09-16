@@ -9,6 +9,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterProductComponent } from './pages/register-product/register-product.component';
 import { ProductComponent } from './pages/product/product.component';
+import { AvaluationComponent } from './pages/avaluation/avaluation.component';
 
 const routes: Routes = [
   {
@@ -48,12 +49,16 @@ const routes: Routes = [
     component: RegisterProductComponent,
   },
   {
-    path: 'product', 
+    path: 'product',
     component: HomeComponent
   },
   {
-    path: 'product/:id', 
+    path: 'product/:id',
     component: ProductComponent
+  },
+  {
+    path: 'avaluation',
+    component: AvaluationComponent
   },
   { path: '**', redirectTo: 'home' },
 ];
@@ -63,3 +68,4 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule { }
+
