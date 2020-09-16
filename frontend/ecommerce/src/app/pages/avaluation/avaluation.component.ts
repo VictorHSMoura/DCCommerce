@@ -24,9 +24,15 @@ export class AvaluationComponent implements OnInit {
 
   }
 
+  // Only for tests
+  // public publicar(): void{
+  //   console.log(this.avaluationForm);
+  // }
+
   private initForm(): void {
     this.avaluationForm = this.formBuilder.group({
       //Colocar função input das estrelas
+      stars: ['', [Validators.required]],
       comentario: ['']
     });
   }

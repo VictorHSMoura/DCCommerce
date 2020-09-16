@@ -13,59 +13,33 @@
                     </div>
 
                     <section id="form">
-                    <form class="form-register-product" [formGroup]="avaluationForm">
-                        <div class="form-label-group">
-                            <label>Avaliação:</label>
-                          <br>
-                            <form class="rating">
-                              <label>
-                                <input type="radio" name="stars" value="1" />
-                                <span class="icon">★</span>
-                              </label>
-                              <label>
-                                <input type="radio" name="stars" value="2" />
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                              </label>
-                              <label>
-                                <input type="radio" name="stars" value="3" />
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                              </label>
-                              <label>
-                                <input type="radio" name="stars" value="4" />
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                              </label>
-                              <label>
-                                <input type="radio" name="stars" value="5" />
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                              </label>
-                            </form>
-                        </div>
+                        <form class="form-register-product" [formGroup]="avaluationForm" (ngSubmit)="publicar()">
+                            <div class="form-label-group">
+                                <label>Avaliação:</label>
+                            <br>
+                                <div class="rating">
+                                <label *ngFor="let index of [1, 2, 3, 4, 5]">
+                                    <input type="radio" formControlName="stars" name="stars" [value]="index" />
+                                    <span *ngFor="let aux of [].constructor(index)" class="icon">★</span>
+                                </label>
+                                </div>
+                            </div>
 
-                        <div class="form-label-group">
-                            <label>Comentário</label>
-                            <textarea
-                                formControlName="comentario"
-                                placeholder="opcional"
-                                id="inputComentario"
-                                class="form-control"
-                                rows="4">
-                            </textarea>
-                        </div>
+                            <div class="form-label-group">
+                                <label>Comentário</label>
+                                <textarea
+                                    formControlName="comentario"
+                                    placeholder="opcional"
+                                    id="inputComentario"
+                                    class="form-control"
+                                    rows="4">
+                                </textarea>
+                            </div>
 
 
-                        <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)="publicar()" type="submit">Publicar</button>
-                    </form>
-                        </section>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Publicar</button>
+                        </form>
+                    </section>
                 </div>
             </div>
         </div>
