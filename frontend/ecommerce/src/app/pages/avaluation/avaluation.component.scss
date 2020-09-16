@@ -1,0 +1,112 @@
+.avaluation {
+    margin-top: 8vh;
+    padding-bottom: 25px;
+    margin-bottom: 30vh;
+}
+
+aside#lateral {
+    display: block;
+    float: left;
+    margin-top: 8vh;
+    padding-bottom: 25px;
+    margin-bottom: 30vh;
+}
+
+aside#lateral h4 {
+    text-align: center;
+    margin: 3vh;
+}
+
+aside#lateral figure {
+    margin: auto;
+    width: 35vh;
+    height: auto;
+    box-shadow: 0.2px rgba(27,28,29,.5);
+}
+
+aside#lateral figure img {
+    width: 100%;
+    height: 100%;
+}
+
+section#form {
+    display: block;
+    float: right;
+    width: 20vw;
+    margin-top: 8vh;
+}
+
+.form-label-group {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.form-label-group label {
+    font-size: 18pt;
+}
+
+.rating {
+  display: inline-block;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  font-size: 50px;
+}
+
+.rating label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
+.rating label:last-child {
+  position: static;
+}
+
+.rating label:nth-child(1) {
+  z-index: 5;
+}
+
+.rating label:nth-child(2) {
+  z-index: 4;
+}
+
+.rating label:nth-child(3) {
+  z-index: 3;
+}
+
+.rating label:nth-child(4) {
+  z-index: 2;
+}
+
+.rating label:nth-child(5) {
+  z-index: 1;
+}
+
+.rating label input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.rating label .icon {
+  float: left;
+  color: transparent;
+}
+
+.rating label:last-child .icon {
+  color: #000;
+}
+
+.rating:not(:hover) label input:checked ~ .icon,
+.rating:hover label:hover input ~ .icon {
+  color: #e7f052;
+}
+
+.rating label input:focus:not(:checked) ~ .icon:last-child {
+  color: #000;
+  text-shadow: 0 0 5px #09f;
+}

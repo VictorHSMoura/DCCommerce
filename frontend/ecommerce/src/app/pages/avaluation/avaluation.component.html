@@ -1,0 +1,73 @@
+<div class="avaluation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 mx-auto">
+                <div class="avaluate">
+                    <h3 class="card-avaluate-title text-center">Avaliar Produto</h3>
+
+                    <div class="product-information">
+                      <aside id="lateral">
+                        <h4>Exemplo de produto</h4>
+                        <p><figure><img src="../../../assets/produtos/1/img1.jpg"></figure></p>
+                      </aside>
+                    </div>
+
+                    <section id="form">
+                    <form class="form-register-product" [formGroup]="avaluationForm">
+                        <div class="form-label-group">
+                            <label>Avaliação:</label>
+                          <br>
+                            <form class="rating">
+                              <label>
+                                <input type="radio" name="stars" value="1" />
+                                <span class="icon">★</span>
+                              </label>
+                              <label>
+                                <input type="radio" name="stars" value="2" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                              </label>
+                              <label>
+                                <input type="radio" name="stars" value="3" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                              </label>
+                              <label>
+                                <input type="radio" name="stars" value="4" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                              </label>
+                              <label>
+                                <input type="radio" name="stars" value="5" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                              </label>
+                            </form>
+                        </div>
+
+                        <div class="form-label-group">
+                            <label>Comentário</label>
+                            <textarea
+                                formControlName="comentario"
+                                placeholder="opcional"
+                                id="inputComentario"
+                                class="form-control"
+                                rows="4">
+                            </textarea>
+                        </div>
+
+
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)="publicar()" type="submit">Publicar</button>
+                    </form>
+                        </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
