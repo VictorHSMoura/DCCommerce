@@ -44,6 +44,7 @@ import { CartModule } from './pages/cart/cart.module';
 import { HomeModule } from './pages/home/home.module';
 import { RegisterProductModule } from './pages/register-product/register-product.module';
 import { ProductComponent } from './pages/product/product.component';
+import { AvaluationModule } from './pages/avaluation/avaluation.module';
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({
@@ -94,6 +95,7 @@ const metaReducers: Array<MetaReducer<any, any>> = [
     CartModule,
     HomeModule,
     RegisterProductModule,
+    AvaluationModule,
   ],
   providers: [
     Storage,
