@@ -9,7 +9,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterProductComponent } from './pages/register-product/register-product.component';
 import { ProductComponent } from './pages/product/product.component';
-import { AvaluationComponent } from './pages/avaluation/avaluation.component';
+import { EvaluationComponent } from './pages/avaluation/evaluation.component';
 
 const routes: Routes = [
   {
@@ -57,8 +57,8 @@ const routes: Routes = [
     component: ProductComponent
   },
   {
-    path: 'avaluation',
-    component: AvaluationComponent
+    path: 'evaluation',
+    component: EvaluationComponent
   },
   { path: '**', redirectTo: 'home' },
 ];
