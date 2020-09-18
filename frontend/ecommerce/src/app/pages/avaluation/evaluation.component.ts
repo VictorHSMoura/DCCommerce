@@ -5,13 +5,13 @@ import { Product } from 'src/app/models/product.model';
 import { CATEGORIES } from '../../models/consts/categories';
 
 @Component({
-  selector: 'app-avaluation',
-  templateUrl: './avaluation.component.html',
-  styleUrls: ['./avaluation.component.scss']
+  selector: 'app-evaluation',
+  templateUrl: './evaluation.component.html',
+  styleUrls: ['./evaluation.component.scss']
 })
-export class AvaluationComponent implements OnInit {
+export class EvaluationComponent implements OnInit {
 
-  public avaluationForm: FormGroup;
+  public evaluationForm: FormGroup;
   public money: number;
   public categories: string[] = CATEGORIES;
 
@@ -30,7 +30,7 @@ export class AvaluationComponent implements OnInit {
   // }
 
   private initForm(): void {
-    this.avaluationForm = this.formBuilder.group({
+    this.evaluationForm = this.formBuilder.group({
       //Colocar função input das estrelas
       stars: ['', [Validators.required]],
       comentario: ['']
