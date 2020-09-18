@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AvaluationComponent } from './avaluation.component';
+import { EvaluationComponent } from './evaluation.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
-    AvaluationComponent
+    EvaluationComponent
   ],
   exports: [
-    AvaluationComponent
+    EvaluationComponent
   ],
   imports: [
     CommonModule,
@@ -18,4 +18,4 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ]
 })
-export class AvaluationModule { }
+export class EvaluationModule { }
