@@ -19,7 +19,7 @@ class Pedido {
       case EstadoItem.EsperandoPagamento:
         return "Esperando o pagamento"
       case EstadoItem.ACaminhoTransportadora:
-        return "Esperando o pagamento"
+        return "A caminho da transportadora"
       case EstadoItem.SaiuDaTransportadora:
         return "Saiu da transportadora"
       case EstadoItem.Finalizado:
