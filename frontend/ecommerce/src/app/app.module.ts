@@ -43,7 +43,7 @@ import { ComponentsModule } from './components/components.module';
 import { CartModule } from './pages/cart/cart.module';
 import { HomeModule } from './pages/home/home.module';
 import { RegisterProductModule } from './pages/register-product/register-product.module';
-import { EvaluationModule } from './pages/avaluation/evaluation.module';
+import { EvaluationModule } from './pages/evaluation/evaluation.module';
 import { ProductModule } from './pages/product/product.module';
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
