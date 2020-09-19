@@ -45,7 +45,6 @@ import { HomeModule } from './pages/home/home.module';
 import { RegisterProductModule } from './pages/register-product/register-product.module';
 import { EvaluationModule } from './pages/evaluation/evaluation.module';
 import { ProductModule } from './pages/product/product.module';
-import { ShoppingHistoryModule } from './pages/shopping-history/shopping-history.module';
 import { ProfileModule } from './pages/profile/profile.module';
 import { RouterModule } from '@angular/router';
 
@@ -99,7 +98,6 @@ const metaReducers: Array<MetaReducer<any, any>> = [
     RegisterProductModule,
     ProductModule,
     EvaluationModule,
-    ShoppingHistoryModule,
     ProfileModule,
     RouterModule.forChild(routes)
   ],
