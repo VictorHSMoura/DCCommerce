@@ -10,6 +10,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { RegisterProductComponent } from './pages/register-product/register-product.component';
 import { ProductComponent } from './pages/product/product.component';
 import { EvaluationComponent } from './pages/evaluation/evaluation.component';
+import { ShoppingHistoryComponent } from './pages/shopping-history/shopping-history.component';
 
 const routes: Routes = [
   {
@@ -59,6 +60,10 @@ const routes: Routes = [
   {
     path: 'evaluation',
     component: EvaluationComponent
+  },
+  {
+    path: 'history',
+    component: ShoppingHistoryComponent
   },
   { path: '**', redirectTo: 'home' },
 ];
