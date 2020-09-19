@@ -1,0 +1,47 @@
+.history {
+    margin-top: 8vh;
+    padding-bottom: 25px;
+    margin-bottom: 30vh;
+}
+
+figure#product-picture {
+    width: 15vh;
+    height: auto;
+    box-shadow: 0.2px rgba(27,28,29,.5);
+}
+
+figure#product-picture img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.name-button {
+    margin-top: 2vh;
+    margin-left: 3vw;
+    margin-bottom: 0vh;
+    display: block;
+}
+
+.shopping-list {
+    list-style-type:none;
+}
+
+.avaliar {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 1vh 2vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 8px;
+    margin-top: 0vh;
+}
+
+.shopping-list li {
+  padding-bottom: 1vh;
+    border-bottom: 0.1vh solid grey;
+}
