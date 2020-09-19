@@ -46,6 +46,7 @@ import { RegisterProductModule } from './pages/register-product/register-product
 import { EvaluationModule } from './pages/evaluation/evaluation.module';
 import { ProductModule } from './pages/product/product.module';
 import { ShoppingHistoryModule } from './pages/shopping-history/shopping-history.module';
+import { ProfileModule } from './pages/profile/profile.module';
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({
@@ -98,6 +99,7 @@ const metaReducers: Array<MetaReducer<any, any>> = [
     ProductModule,
     EvaluationModule,
     ShoppingHistoryModule,
+    ProfileModule
   ],
   providers: [
     Storage,
