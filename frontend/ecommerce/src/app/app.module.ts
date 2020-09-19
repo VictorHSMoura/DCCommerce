@@ -43,7 +43,7 @@ import { ComponentsModule } from './components/components.module';
 import { CartModule } from './pages/cart/cart.module';
 import { HomeModule } from './pages/home/home.module';
 import { RegisterProductModule } from './pages/register-product/register-product.module';
-import { AvaluationModule } from './pages/avaluation/avaluation.module';
+import { EvaluationModule } from './pages/avaluation/evaluation.module';
 import { ProductModule } from './pages/product/product.module';
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
@@ -95,7 +95,7 @@ const metaReducers: Array<MetaReducer<any, any>> = [
     HomeModule,
     RegisterProductModule,
     ProductModule,
-    AvaluationModule,
+    EvaluationModule,
   ],
   providers: [
     Storage,
