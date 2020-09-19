@@ -11,6 +11,7 @@ import { RegisterProductComponent } from './pages/register-product/register-prod
 import { ProductComponent } from './pages/product/product.component';
 import { EvaluationComponent } from './pages/evaluation/evaluation.component';
 import { ShoppingHistoryComponent } from './pages/shopping-history/shopping-history.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -64,6 +65,10 @@ const routes: Routes = [
   {
     path: 'history',
     component: ShoppingHistoryComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
   },
   { path: '**', redirectTo: 'home' },
 ];
