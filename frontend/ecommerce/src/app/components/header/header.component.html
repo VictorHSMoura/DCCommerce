@@ -29,6 +29,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="userDropdown">
             <ng-container *ngIf="loggedUser$ | async; else login">
+              <a class="dropdown-item" href="/profile">Perfil</a>    
               <a class="dropdown-item" (click)="logout()" href="javascript:void(0)">Sair</a>              
             </ng-container>
             <ng-template #login>
