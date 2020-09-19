@@ -13,7 +13,7 @@ import { EvaluationComponent } from './pages/evaluation/evaluation.component';
 import { ShoppingHistoryComponent } from './pages/shopping-history/shopping-history.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     redirectTo: '/home',

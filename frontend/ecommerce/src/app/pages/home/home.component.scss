@@ -1,0 +1,73 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a h4:hover {
+    color: #666565;
+}
+
+.row {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.product-div {
+    padding: 0px 10px 10px;
+    text-align: left;
+}
+.product-card {
+    padding: 0px 20px;
+    border: #ccc 1px solid;
+    border-radius: 5px;
+}
+
+.product-image {
+    width: 100%;
+}
+
+.product-info {
+    margin-bottom: 20px;
+}
+
+.price {
+    margin-bottom: 2px;
+}
+
+.cash-price-detail {
+    color: #28a745;
+    font-size: 0.95em;
+}
+
+.cash-price {
+    font-size: 1.3em;
+}
+
+.credit-card-price-detail {
+    color: orangered;
+    font-size: 0.9em;
+}
+
+.card-price {
+    font-size: 1.2em;
+}
+
+.buttons-details {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.btn-product-details {
+    width: 100%;
+    height: 40px;
+}
+
+// using bootstrap max value
+@media only screen and (max-width: 767.98px) {
+    .row {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}

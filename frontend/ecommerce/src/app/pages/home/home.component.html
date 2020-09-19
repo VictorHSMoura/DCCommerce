@@ -1,5 +1,35 @@
-<p style="font-size: 60px;
-margin-top: 8vh;
-margin-bottom: 70vh;">
-    Home em construção!
-</p>
+<div class="container">
+    <div *ngFor="let rows of [1, 2, 3, 4]" class="row">
+        <div *ngFor="let products of [1, 2, 3, 4]" class="col-md-3 product-div">
+            <div class="product-card">
+                <div class="product-info">
+                    <a [routerLink]="['/product', products]">
+                        <img class="product-image" src="../../../assets/produtos/1/img1.jpg">
+                        <h4 class="product-name">Título do Produto {{ 4 * (rows-1) + products}}</h4>
+                    </a>
+                </div>
+                <div class="product-details">
+                    <p class="cash-price-detail price">
+                        <span class="cash-price">{{1400 | currency:'BRL'}}</span> à vista no boleto
+                    </p>
+                    <p class="credit-card-price-detail price">
+                        <span class="card-price">12x de {{1750 / 12 | currency:'BRL'}}</span> sem juros
+                    </p>
+                    <div class="row">
+                        <div class="col-sm-8 buttons-details">
+                            <button class="btn btn-success btn-product-details">Detalhes</button>
+                        </div>
+                        <div class="col-sm-4 buttons-details">
+                            <button class="btn btn-success btn-product-details">
+                                <a routerLink="/cart">
+                                    <img src="../../../assets/project/cart.svg" width="100%" height="100%">
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

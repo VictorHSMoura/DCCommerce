@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { ToasterModule } from 'angular2-toaster';
@@ -47,6 +47,7 @@ import { EvaluationModule } from './pages/evaluation/evaluation.module';
 import { ProductModule } from './pages/product/product.module';
 import { ShoppingHistoryModule } from './pages/shopping-history/shopping-history.module';
 import { ProfileModule } from './pages/profile/profile.module';
+import { RouterModule } from '@angular/router';
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({
@@ -99,7 +100,8 @@ const metaReducers: Array<MetaReducer<any, any>> = [
     ProductModule,
     EvaluationModule,
     ShoppingHistoryModule,
-    ProfileModule
+    ProfileModule,
+    RouterModule.forChild(routes)
   ],
   providers: [
     Storage,
