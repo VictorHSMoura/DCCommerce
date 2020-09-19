@@ -9,7 +9,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterProductComponent } from './pages/register-product/register-product.component';
 import { ProductComponent } from './pages/product/product.component';
-import { EvaluationComponent } from './pages/avaluation/evaluation.component';
+import { EvaluationComponent } from './pages/evaluation/evaluation.component';
 
 const routes: Routes = [
   {
