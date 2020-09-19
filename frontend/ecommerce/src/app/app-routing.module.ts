@@ -10,7 +10,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { RegisterProductComponent } from './pages/register-product/register-product.component';
 import { ProductComponent } from './pages/product/product.component';
 import { EvaluationComponent } from './pages/evaluation/evaluation.component';
-import { ShoppingHistoryComponent } from './pages/shopping-history/shopping-history.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 
 export const routes: Routes = [
@@ -61,10 +60,6 @@ export const routes: Routes = [
   {
     path: 'evaluation',
     component: EvaluationComponent
-  },
-  {
-    path: 'history',
-    component: ShoppingHistoryComponent
   },
   {
     path: 'profile',
