@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 enum EstadoItem {
   EsperandoPagamento,
@@ -36,11 +37,17 @@ class Pedido {
 export class ProfileComponent implements OnInit {
   pedidos = []
 
+  constructor(private router: Router) { }
+
   ngOnInit() {
     // todo autenticar o usuário e ler do banco de dados todos os ids, nomes, e status dos pedidos desse usuário
     this.pedidos.push(new Pedido(52363235, EstadoItem.ACaminhoTransportadora, "Intel 11th gen"))
     this.pedidos.push(new Pedido(2493845700, EstadoItem.EsperandoPagamento, "Produto2"))
     this.pedidos.push(new Pedido(149381357, EstadoItem.SaiuDaTransportadora, "Produto3"))
     this.pedidos.push(new Pedido(2444933257, EstadoItem.Finalizado, "Produto4"))
+  }
+
+  btnClick() {
+      this.router.navigate(['/evaluation']);
   }
 }
