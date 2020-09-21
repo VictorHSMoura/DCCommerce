@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
         phoneNumber,
         loginType: method,
       };
+      console.log(user);
       this.store.dispatch(setLoggedUser({ user }));
       this.router.navigate(['dashboard']);
     } catch (error) {

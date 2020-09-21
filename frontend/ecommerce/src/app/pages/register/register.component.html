@@ -8,8 +8,13 @@
               <h5 class="card-title text-center">Sign up</h5>
               <form class="form-signin" [formGroup]="registerForm">
                 <div class="form-label-group">
+                  <label>Username</label>
+                  <input formControlName="username" type="text" placeholder="Username" id="inputUsername" class="form-control" required autofocus>
+                </div>
+
+                <div class="form-label-group">
                   <label>Email</label>
-                  <input formControlName="email" type="email" placeholder="Email" id="inputEmail" class="form-control" required autofocus>
+                  <input formControlName="email" type="email" placeholder="Email" id="inputEmail" class="form-control" required>
                 </div>
   
                 <div class="form-label-group">

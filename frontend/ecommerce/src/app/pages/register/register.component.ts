@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToasterService } from 'angular2-toaster';
 import { AuthService } from 'src/app/services/auth/auth.service';
-import { Credentials, User } from 'src/app/models/auth';
+import { Credentials, CredentialsWithName, User } from 'src/app/models/auth';
 import { setLoggedUser } from 'src/app/stores/auth/auth.actions';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/stores/reducers';
@@ -27,10 +27,14 @@ export class RegisterComponent implements OnInit {
 
   public async register(): Promise<void> {
     try {
-      const value = this.registerForm.value as Credentials;
-      const reg = await this.authService.registerUser(value);
+      const userInfo = this.registerForm.value as CredentialsWithName;
+      const value: Credentials = <any>{};
+      value.email = this.registerForm.value.email;
+      value.password = this.registerForm.value.password;
+      const reg = await this.authService.registerUser(userInfo);
 
-      const res = await this.authService.loginWrap('email', value);
+      let res = await this.authService.loginWrap('email', value);
+      res.additionalUserInfo.username = userInfo.username;
       const { displayName, photoURL, email, phoneNumber } = res.user;
       const user: User = {
         displayName,
@@ -39,6 +43,7 @@ export class RegisterComponent implements OnInit {
         phoneNumber,
         loginType: 'email',
       };
+      console.log(user);
       this.store.dispatch(setLoggedUser({ user }));
       this.router.navigate(['dashboard']);
     } catch (e) {
@@ -49,6 +54,7 @@ export class RegisterComponent implements OnInit {
 
   private initForm(): void {
     this.registerForm = this.formBuilder.group({
+      username: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.email, Validators.required]],
       password: ['', [Validators.required, Validators.minLength(3)]],
     });

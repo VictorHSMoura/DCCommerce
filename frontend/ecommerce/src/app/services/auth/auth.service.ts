@@ -1,7 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { Credentials } from 'src/app/models/auth';
+import { Credentials, CredentialsWithName } from 'src/app/models/auth';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -15,8 +15,15 @@ export class AuthService {
     public afAuth: AngularFireAuth,
   ) { }
 
-  public async registerUser(value: Credentials): Promise<firebase.auth.UserCredential> {
+  public async registerUser(value: CredentialsWithName): Promise<firebase.auth.UserCredential> {
     const res: firebase.auth.UserCredential = await firebase.auth().createUserWithEmailAndPassword(value.email, value.password);
+    return res;
+  }
+
+  public async addUsername(value: string): Promise<void> {
+    const res = await firebase.auth().currentUser.updateProfile({
+      displayName: value
+    });
     return res;
   }
 
