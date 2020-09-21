@@ -5,6 +5,7 @@ import { User } from 'src/app/models/auth';
 import { Observable } from 'rxjs';
 import { getAuthLoggedUser } from 'src/app/stores/auth/auth.selectors';
 import { logout } from 'src/app/stores/auth/auth.actions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -17,10 +18,12 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private store: Store<AppState>,
+    private router: Router,
   ) { }
 
   public logout() {
     this.store.dispatch(logout({ }));
+    this.router.navigate(['home']);
   }
 
   ngOnInit() {

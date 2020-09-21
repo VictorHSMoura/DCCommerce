@@ -27,14 +27,15 @@ export class RegisterComponent implements OnInit {
 
   public async register(): Promise<void> {
     try {
-      const userInfo = this.registerForm.value as CredentialsWithName;
-      const value: Credentials = <any>{};
-      value.email = this.registerForm.value.email;
-      value.password = this.registerForm.value.password;
-      const reg = await this.authService.registerUser(userInfo);
+      const userName = this.registerForm.value.username;
+      const value: Credentials = {
+        email: this.registerForm.value.email,
+        password: this.registerForm.value.password
+      };
+      const reg = await this.authService.registerUser(value);
+      const usrname = await this.authService.addUsername(userName);
 
       let res = await this.authService.loginWrap('email', value);
-      res.additionalUserInfo.username = userInfo.username;
       const { displayName, photoURL, email, phoneNumber } = res.user;
       const user: User = {
         displayName,

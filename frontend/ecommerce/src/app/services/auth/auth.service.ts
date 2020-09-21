@@ -15,7 +15,7 @@ export class AuthService {
     public afAuth: AngularFireAuth,
   ) { }
 
-  public async registerUser(value: CredentialsWithName): Promise<firebase.auth.UserCredential> {
+  public async registerUser(value: Credentials): Promise<firebase.auth.UserCredential> {
     const res: firebase.auth.UserCredential = await firebase.auth().createUserWithEmailAndPassword(value.email, value.password);
     return res;
   }
