@@ -35,6 +35,7 @@ class Pedido {
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  EstadoItem: typeof EstadoItem = EstadoItem; // precisa disso pra conseguir acessar o enum no html '-'
   pedidos = []
 
   constructor(private router: Router) { }
