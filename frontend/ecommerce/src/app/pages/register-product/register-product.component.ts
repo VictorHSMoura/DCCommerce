@@ -30,7 +30,8 @@ export class RegisterProductComponent implements OnInit {
         this.registerProductForm.value.descricao_oferta,
         this.registerProductForm.value.valor,
         'Nome do Anunciante',
-        false
+        false,
+        []
       )
       console.log(product);
     } catch (e) {
