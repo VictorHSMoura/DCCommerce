@@ -5,7 +5,7 @@ const Op = db.Sequelize.Op;
 // Criar e salvar um produto
 exports.create = (req, res) => {
   // Validar requisição
-  if (!req.body.description) {
+  if (!req.body) {
     res.status(400).send({
       message: "Campos não podem ser vazios!"
     });
@@ -16,7 +16,7 @@ exports.create = (req, res) => {
   const product = {
     id: req.body.id,
     categoria: req.body.categoria,
-    titulo: strireq.body.titulo,
+    titulo: req.body.titulo,
     descricao_oferta: req.body.descricao_oferta,
     valor: req.body.valor,
     anunciante: req.body.anunciante,
@@ -25,7 +25,7 @@ exports.create = (req, res) => {
   };
 
   // Salvar produto no banco
-  Product.create(produto)
+  Product.create(product)
     .then(data => {
       res.send(data);
     })
@@ -58,6 +58,7 @@ function criaParametroFiltroQuery(req) {
 // Listar todos os produtos do banco.
 exports.findAll = (req, res) => {
   var condition = criaParametroFiltroQuery(req);
+  console.log(condition)
   Product.findAll({ where: condition })
     .then(data => {
       res.send(data);

@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Bem vindos a aplicação" });
 });
 
-require("./app/routes/item.routes")(app);
+require("./app/routes/product.routes")(app);
 
 // Escutar as requisições que chegam
 const PORT = process.env.PORT || 8080;
