@@ -11,6 +11,7 @@ import { RegisterProductComponent } from './pages/register-product/register-prod
 import { ProductComponent } from './pages/product/product.component';
 import { EvaluationComponent } from './pages/evaluation/evaluation.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { UnloggedGuard } from './guards/unlogged/unlogged.guard';
 
 export const routes: Routes = [
   {
@@ -36,10 +37,12 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [UnloggedGuard],
   },
   {
     path: 'cart',
     component: CartComponent,
+    canActivate: [UnloggedGuard],
   },
   {
     path: 'home',
@@ -48,6 +51,7 @@ export const routes: Routes = [
   {
     path: 'register-product',
     component: RegisterProductComponent,
+    canActivate: [UnloggedGuard],
   },
   {
     path: 'product',
@@ -59,11 +63,13 @@ export const routes: Routes = [
   },
   {
     path: 'evaluation',
-    component: EvaluationComponent
+    component: EvaluationComponent,
+    canActivate: [UnloggedGuard],
   },
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [UnloggedGuard],
   },
   { path: '**', redirectTo: 'home' },
 ];
