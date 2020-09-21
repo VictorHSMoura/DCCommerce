@@ -18,7 +18,7 @@ export class AppComponent {
     this.router.events.subscribe(
       async () => {
         const url = this.router.url;
-        console.log('url', url);
+        // console.log('url', url);
         if (url === '/' || url === '/login' || url === '/register' || url === '/forgot-password') {
           this.showHeader = false;
         } else {
