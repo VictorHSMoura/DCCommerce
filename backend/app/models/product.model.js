@@ -1,8 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
   const MainProduct = sequelize.define("MainProduct", {
-    id: {
-      type: Sequelize.INTEGER
-    },
     titulo: {
       type: Sequelize.STRING
     },
@@ -23,5 +20,5 @@ module.exports = (sequelize, Sequelize) => {
     },
   });
 
-  return Item;
+  return MainProduct;
 };
