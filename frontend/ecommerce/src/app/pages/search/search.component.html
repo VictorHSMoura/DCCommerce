@@ -1,5 +1,6 @@
 <div class="container" *ngIf="products != undefined">
-    <div *ngFor="let rows of [1, 2, 3, 4]" class="row">
+    <h2 class="search-header">Resultado da busca por {{searchText}}</h2>
+    <div class="row">
         <div *ngFor="let product of products" class="col-md-3 col-sm-6 product-div">
             <div class="product-card d-flex flex-column h-100">
                 <div class="product-info">

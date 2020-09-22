@@ -12,18 +12,18 @@ export class ProductService {
   public getProducts(): Promise<MainProduct []> {
     return this.http.get('http://localhost:3000/ofertas')
       .toPromise()
-      .then((answer: MainProduct[]) => {
-        console.log('chegou aqui');
-        console.log(answer);
-        return answer;
-      });
+      .then((answer: MainProduct[]) => answer);
   }
 
   public getProductById(id: number): Promise<MainProduct> {
     return this.http.get('http://localhost:3000/ofertas?id=' + id)
       .toPromise()
-      .then((answer: MainProduct) => {
-        return answer[0];
-      });
+      .then((answer: MainProduct) => answer[0]);
+  }
+
+  public getProductsBySearch(searchText: string): Promise<MainProduct[]> {
+    return this.http.get('http://localhost:3000/ofertas?titulo_like=' + searchText)
+      .toPromise()
+      .then((answer: MainProduct[]) => answer);
   }
 }

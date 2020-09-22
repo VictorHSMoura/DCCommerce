@@ -12,6 +12,7 @@ import { ProductComponent } from './pages/product/product.component';
 import { EvaluationComponent } from './pages/evaluation/evaluation.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UnloggedGuard } from './guards/unlogged/unlogged.guard';
+import { SearchComponent } from './pages/search/search.component';
 
 export const routes: Routes = [
   {
@@ -60,6 +61,14 @@ export const routes: Routes = [
   {
     path: 'product/:id',
     component: ProductComponent
+  },
+  {
+    path: 'search',
+    component: HomeComponent
+  },
+  {
+    path: 'search/:q',
+    component: SearchComponent
   },
   {
     path: 'evaluation',

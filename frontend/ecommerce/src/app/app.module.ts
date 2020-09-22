@@ -48,6 +48,8 @@ import { ProductModule } from './pages/product/product.module';
 import { ProfileModule } from './pages/profile/profile.module';
 import { RouterModule } from '@angular/router';
 import { ReducedDescription } from './utils/reduced-description.pipe';
+import { SearchComponent } from './pages/search/search.component';
+import { SearchModule } from './pages/search/search.module';
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({
@@ -65,7 +67,7 @@ const metaReducers: Array<MetaReducer<any, any>> = [
 @NgModule({
   declarations: [
     AppComponent,
-    ReducedDescription
+    ReducedDescription,
   ],
   imports: [
     StoreModule.forRoot(reducers, { metaReducers }),
@@ -102,6 +104,7 @@ const metaReducers: Array<MetaReducer<any, any>> = [
     EvaluationModule,
     ProfileModule,
     HttpClientModule,
+    SearchModule,
     RouterModule.forChild(routes)
   ],
   providers: [

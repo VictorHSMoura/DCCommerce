@@ -5,6 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { RouterModule } from '@angular/router';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     // FontAwesomeModule,
     // AngularFontAwesomeModule,
     RouterModule.forChild([]),
