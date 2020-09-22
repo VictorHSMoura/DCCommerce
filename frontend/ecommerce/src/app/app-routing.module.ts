@@ -76,6 +76,11 @@ export const routes: Routes = [
     canActivate: [UnloggedGuard],
   },
   {
+    path: 'evaluation/:id',
+    component: EvaluationComponent,
+    canActivate: [UnloggedGuard],
+  },
+  {
     path: 'profile',
     component: ProfileComponent,
     canActivate: [UnloggedGuard],
