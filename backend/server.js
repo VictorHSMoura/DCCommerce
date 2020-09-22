@@ -25,6 +25,8 @@ app.get("/", (req, res) => {
 });
 
 require("./app/routes/product.routes")(app);
+require("./app/routes/order.routes")(app);
+require("./app/routes/commentary.routes")(app);
 
 // Escutar as requisições que chegam
 const PORT = process.env.PORT || 8080;

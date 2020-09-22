@@ -20,5 +20,9 @@ module.exports = (sequelize, Sequelize) => {
     },
   });
 
+  MainProduct.associate = function(models) {
+    MainProduct.belongsToMany(models.Order, {through: 'OrderProducts', foreignKey: 'productId', as: 'orders'})
+  };
+
   return MainProduct;
 };

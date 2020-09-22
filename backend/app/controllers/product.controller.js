@@ -58,7 +58,6 @@ function criaParametroFiltroQuery(req) {
 // Listar todos os produtos do banco.
 exports.findAll = (req, res) => {
   var condition = criaParametroFiltroQuery(req);
-  console.log(condition)
   Product.findAll({ where: condition })
     .then(data => {
       res.send(data);
