@@ -22,11 +22,20 @@ export class EvaluationComponent implements OnInit {
     private formBuilder: FormBuilder,
     private toasterService: ToasterService,
     private productService: ProductService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   public async publicar(): Promise<void> {
+    try {
+      const value = this.evaluationForm.value;
+      console.log(this.evaluationForm.value.stars)
+      this.router.navigate(['/profile']);
 
+    } catch (e) {
+      this.toasterService.pop('error', 'Erro na publicação', 'Confira os dados digitados ou tente novamente mais tarde');
+      console.log('login error', e);
+    }
   }
 
   // Only for tests
