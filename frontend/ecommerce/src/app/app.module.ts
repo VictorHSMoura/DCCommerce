@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { ToasterModule } from 'angular2-toaster';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
 // import { FontAwesomeModule } from 'font-awesome/';
 // import { library } from '@fortawesome/fontawesome-svg-core';
@@ -47,6 +47,7 @@ import { EvaluationModule } from './pages/evaluation/evaluation.module';
 import { ProductModule } from './pages/product/product.module';
 import { ProfileModule } from './pages/profile/profile.module';
 import { RouterModule } from '@angular/router';
+import { ReducedDescription } from './utils/reduced-description.pipe';
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({
@@ -64,6 +65,7 @@ const metaReducers: Array<MetaReducer<any, any>> = [
 @NgModule({
   declarations: [
     AppComponent,
+    ReducedDescription
   ],
   imports: [
     StoreModule.forRoot(reducers, { metaReducers }),
@@ -99,6 +101,7 @@ const metaReducers: Array<MetaReducer<any, any>> = [
     ProductModule,
     EvaluationModule,
     ProfileModule,
+    HttpClientModule,
     RouterModule.forChild(routes)
   ],
   providers: [

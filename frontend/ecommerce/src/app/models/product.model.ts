@@ -1,3 +1,5 @@
+import { assertNotNull } from '@angular/compiler/src/output/output_ast';
+
 export class Product {
     constructor(
         public categoria: string,
@@ -5,7 +7,9 @@ export class Product {
         public descricao_oferta: string,
         public valor: number,
         public anunciante: string,
-        public destaque: boolean
+        public anunciante_email: string,
+        public destaque: boolean,
+        public imagens: any
     ) {}
 }
 
@@ -17,8 +21,10 @@ export class MainProduct extends Product {
         descricao_oferta: string,
         valor: number,
         anunciante: string,
-        destaque: boolean
+        anunciante_email: string,
+        destaque: boolean,
+        imagens: any
     ){
-        super(categoria, titulo, descricao_oferta, valor, anunciante, destaque);
+        super(categoria, titulo, descricao_oferta, valor, anunciante, anunciante_email, destaque, imagens);
     }
 }

@@ -27,6 +27,14 @@ export class AuthService {
     return res;
   }
 
+  public getUserName(): string {
+    return firebase.auth().currentUser.displayName;
+  }
+
+  public getUserEmail(): string {
+    return firebase.auth().currentUser.email;
+  }
+
   public async loginWrap(method: 'facebook' | 'google' | 'email', credentials?: Credentials): Promise<firebase.auth.UserCredential> {
     switch (method) {
       case 'facebook':
