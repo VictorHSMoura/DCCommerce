@@ -3,8 +3,8 @@ module.exports = (sequelize, Sequelize, db) => {
     comprador: {
       type: Sequelize.STRING
     },
-    pedidoFinalizado: {
-      type: Sequelize.BOOLEAN
+    status: {
+      type: Sequelize.STRING
     },
   });
   Order.associate = function(models) {

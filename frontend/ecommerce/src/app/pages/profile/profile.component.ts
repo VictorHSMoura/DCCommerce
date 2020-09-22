@@ -12,7 +12,8 @@ class Pedido {
   constructor(
     public id: number,
     public status: EstadoItem,
-    public name: string
+    public name: string,
+    public produtoId: number
   ) {
   }
   public getStatusString(): string {
@@ -42,13 +43,13 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     // todo autenticar o usuário e ler do banco de dados todos os ids, nomes, e status dos pedidos desse usuário
-    this.pedidos.push(new Pedido(52363235, EstadoItem.ACaminhoTransportadora, "Intel 11th gen"))
-    this.pedidos.push(new Pedido(2493845700, EstadoItem.EsperandoPagamento, "Produto2"))
-    this.pedidos.push(new Pedido(149381357, EstadoItem.SaiuDaTransportadora, "Produto3"))
-    this.pedidos.push(new Pedido(2444933257, EstadoItem.Finalizado, "Produto4"))
+    this.pedidos.push(new Pedido(52363235, EstadoItem.ACaminhoTransportadora, "Intel 11th gen", 1))
+    this.pedidos.push(new Pedido(2493845700, EstadoItem.EsperandoPagamento, "Produto2", 1))
+    this.pedidos.push(new Pedido(149381357, EstadoItem.SaiuDaTransportadora, "Produto3", 1))
+    this.pedidos.push(new Pedido(2444933257, EstadoItem.Finalizado, "Produto4", 1))
   }
 
-  btnClick() {
-      this.router.navigate(['/evaluation']);
+  btnClick(produtoId) {
+      this.router.navigate(['/evaluation', produtoId]);
   }
 }
