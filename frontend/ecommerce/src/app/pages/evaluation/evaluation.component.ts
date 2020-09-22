@@ -5,6 +5,9 @@ import { ActivatedRoute, Params, Router, RouterOutlet } from '@angular/router';
 import { MainProduct } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product/product.service';
 import { CATEGORIES } from '../../models/consts/categories';
+import { Evaluation } from 'src/app/models/evaluation.model';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { EvaluationService } from 'src/app/services/evaluation/evaluation.service';
 
 @Component({
   selector: 'app-evaluation',
@@ -17,20 +20,33 @@ export class EvaluationComponent implements OnInit {
   public evaluationForm: FormGroup;
   public product: MainProduct;
   public mainImage: string;
+  private userName: string;
+
 
   constructor(
     private formBuilder: FormBuilder,
     private toasterService: ToasterService,
     private productService: ProductService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private authService: AuthService,
+    private evaluationService: EvaluationService,
   ) { }
 
   public async publicar(): Promise<void> {
     try {
       const value = this.evaluationForm.value;
-      console.log(this.evaluationForm.value.stars)
-      this.router.navigate(['/profile']);
+
+      const evaluation = new Evaluation(1, this.evaluationForm.value.comentario, this.evaluationForm.value.stars, this.userName);
+      
+      this.evaluationService.postEvaluation(evaluation)
+        .then((evaluation: Evaluation) => {
+          this.router.navigate(['/profile']);
+        })
+      .catch((param: any) => {
+        this.toasterService.pop('error', 'Algum erro ocorreu', 'Tente novamente mais tarde');
+      });
+      
 
     } catch (e) {
       this.toasterService.pop('error', 'Erro na publicação', 'Confira os dados digitados ou tente novamente mais tarde');
@@ -49,6 +65,7 @@ export class EvaluationComponent implements OnInit {
       stars: ['', [Validators.required]],
       comentario: ['']
     });
+    this.userName = this.authService.getUserName();
   }
 
   ngOnInit() {

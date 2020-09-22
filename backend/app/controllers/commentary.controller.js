@@ -14,14 +14,10 @@ exports.create = (req, res) => {
 
   // Criar um comentario
   const commentary = {
-    MainProductId: req.body.ProductId,
+    MainProductId: req.body.productId,
     texto: req.body.texto,
     nota: req.body.nota,
-    avaliador: req.body.usuarioLogadoEmail,
-    valor: req.body.valor,
-    anunciante: req.body.anunciante,
-    destaque: req.body.destaque,
-
+    avaliador: req.body.avaliador,
   };
 
   // Salvar comentario no banco
@@ -39,8 +35,8 @@ exports.create = (req, res) => {
 
 function criaParametroFiltroQuery(req) {
   let where = {};
-  if (req.query.ProductId)
-    Object.assign(where, { MainProductId: req.query.ProductId });
+  if (req.query.produtoId)
+    Object.assign(where, { MainProductId: req.query.produtoId });
 
   return where;
 }
