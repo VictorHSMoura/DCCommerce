@@ -1,44 +1,54 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8 subcontainer">
-            <h2 class="product-name">Titulo Produto</h2>
+        <div class="col-md-1"></div>
+        <div class="col-md-10 subcontainer">
             <div class="row">
-                <div class="col-md-8 product-photo">
-                    <img class="product-image" src="../../../assets/produtos/1/img1.jpg">
+                <div class="col-lg-8 product-photo">
+                    <div class="card h-100">
+                        <div class="main-image">
+                            <img class="product-image" [src]="mainImage">
+                            <hr/>
+                        </div>
+                        <div class="other-images">
+                            <img class="mini-images card" *ngFor="let image of product.imagens" [src]="image.url" (click)="changeImage(image.url)" width="80px" height="80px">
+                        </div> 
+                        
+                    </div>
                 </div>
-                <div class="col-md-4 product-card h-100">
-                    <div class="product-info">
-                        <h2 class="product-name">Titulo Produto</h2>
-                        <h4 class="product-vendor">Anunciante</h4>
-                        <hr/>
-                    </div>
-                    
-                    <div class="product-details">
-                        <p class="cash-price-detail price">
-                            <span class="cash-price">{{1500*.9 | currency:'BRL'}}</span><br/>à vista no boleto
-                        </p>
-                        <p class="credit-card-price-detail price">
-                            <span class="card-price">12x de {{1500 / 12 | currency:'BRL'}}</span> sem juros
-                        </p>
-                    </div>
-                    <div class="product-buttons">
-                        <button class="btn btn-success btn-block btn-product-details">
-                            <a routerLink="/cart">
-                                <div class="row">
-                                    <div class="col-sm-4 col-md-5 buy-icon">
-                                        <img id="cart" src="../../../assets/project/cart.svg" width="70%" height="70%">
+                <div class="col-lg-4">
+                    <div class="card h-100">
+                        <div class="product-info">
+                            <h3 class="product-name">{{product.titulo}}</h3>
+                            <h4 class="product-vendor">{{product.anunciante}}</h4>
+                            <hr/>
+                        </div>
+                        
+                        <div class="product-details">
+                            <p class="cash-price-detail price">
+                                <span class="cash-price">{{product.valor*.9 | currency:'BRL'}}</span><br/>à vista no boleto
+                            </p>
+                            <p class="credit-card-price-detail price">
+                                <span class="card-price">12x de {{product.valor / 12 | currency:'BRL'}}</span> sem juros
+                            </p>
+                        </div>
+                        <div class="product-buttons">
+                            <button class="btn btn-success btn-block btn-product-details">
+                                <a routerLink="/cart">
+                                    <div class="row">
+                                        <div class="col-sm-4 col-md-5 buy-icon">
+                                            <img id="cart" src="../../../assets/project/cart.svg" width="35vw" height="35vw">
+                                        </div>
+                                        <div class="col-sm-8 col-md-7 buy-text">  
+                                            <span class="btn-buy">Comprar</span>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-8 col-md-7 buy-text">  
-                                        <span class="btn-buy">Comprar</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </button>
+                                </a>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-1"></div>
     </div>
 </div>

@@ -18,4 +18,12 @@ export class ProductService {
         return answer;
       });
   }
+
+  public getProductById(id: number): Promise<MainProduct> {
+    return this.http.get('http://localhost:3000/ofertas?id=' + id)
+      .toPromise()
+      .then((answer: MainProduct) => {
+        return answer[0];
+      });
+  }
 }
