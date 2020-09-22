@@ -2,6 +2,7 @@ import { Component, OnChanges, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToasterService } from 'angular2-toaster';
 import { Product } from 'src/app/models/product.model';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { CATEGORIES } from '../../models/consts/categories';
 
 @Component({
@@ -14,10 +15,13 @@ export class RegisterProductComponent implements OnInit {
   public registerProductForm: FormGroup;
   public money: number;
   public categories: string[] = CATEGORIES;
+  private userName: string;
+  private userEmail: string;
 
   constructor(
     private formBuilder: FormBuilder,
-    private toasterService: ToasterService
+    private toasterService: ToasterService,
+    private authService: AuthService
   ) { }
 
   public async cadastrar(): Promise<void> {
@@ -29,9 +33,10 @@ export class RegisterProductComponent implements OnInit {
         this.registerProductForm.value.titulo,
         this.registerProductForm.value.descricao_oferta,
         this.registerProductForm.value.valor,
-        'Nome do Anunciante',
+        this.userName,
+        this.userEmail,
         false,
-        []
+        this.registerProductForm.value.imagens
       )
       console.log(product);
     } catch (e) {
@@ -49,6 +54,8 @@ export class RegisterProductComponent implements OnInit {
       imagens: [null, [Validators.required]]
     });
     this.money = this.registerProductForm.value.valor;
+    this.userName = this.authService.getUserName();
+    this.userEmail = this.authService.getUserEmail();
   }
 
   ngOnInit() {

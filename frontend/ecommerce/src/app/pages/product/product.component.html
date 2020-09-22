@@ -1,5 +1,44 @@
-<p style="font-size: 60px;
-margin-top: 8vh;
-margin-bottom: 70vh;">
-    Página de produto em construção!
-</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 subcontainer">
+            <h2 class="product-name">Titulo Produto</h2>
+            <div class="row">
+                <div class="col-md-8 product-photo">
+                    <img class="product-image" src="../../../assets/produtos/1/img1.jpg">
+                </div>
+                <div class="col-md-4 product-card h-100">
+                    <div class="product-info">
+                        <h2 class="product-name">Titulo Produto</h2>
+                        <h4 class="product-vendor">Anunciante</h4>
+                        <hr/>
+                    </div>
+                    
+                    <div class="product-details">
+                        <p class="cash-price-detail price">
+                            <span class="cash-price">{{1500*.9 | currency:'BRL'}}</span><br/>à vista no boleto
+                        </p>
+                        <p class="credit-card-price-detail price">
+                            <span class="card-price">12x de {{1500 / 12 | currency:'BRL'}}</span> sem juros
+                        </p>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn btn-success btn-block btn-product-details">
+                            <a routerLink="/cart">
+                                <div class="row">
+                                    <div class="col-sm-4 col-md-5 buy-icon">
+                                        <img id="cart" src="../../../assets/project/cart.svg" width="70%" height="70%">
+                                    </div>
+                                    <div class="col-sm-8 col-md-7 buy-text">  
+                                        <span class="btn-buy">Comprar</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
