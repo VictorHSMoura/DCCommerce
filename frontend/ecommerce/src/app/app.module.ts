@@ -50,6 +50,7 @@ import { RouterModule } from '@angular/router';
 import { ReducedDescription } from './utils/reduced-description.pipe';
 import { SearchComponent } from './pages/search/search.component';
 import { SearchModule } from './pages/search/search.module';
+import { ChartService } from './services/chart/chart.service';
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({
@@ -110,6 +111,7 @@ const metaReducers: Array<MetaReducer<any, any>> = [
   providers: [
     Storage,
     { provide: LOCALE_ID, useValue: 'pt-BR' },
+    ChartService
   ],
   bootstrap: [AppComponent],
 })
