@@ -14,7 +14,12 @@ aside#lateral {
 
 aside#lateral h4 {
     text-align: center;
-    margin: 3vh;
+    margin-top: 3vh;
+    display: inline-block;
+    width: 21vw;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
 }
 
 aside#lateral figure {
