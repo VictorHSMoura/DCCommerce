@@ -11,7 +11,7 @@ export class EvaluationService {
 
 
   public getEvaluationBySearch(searchText: string): Promise<Evaluation[]> {
-    return this.http.get('http://localhost:8080/api/comentario?produtoId=' + searchText)
+    return this.http.get('http://localhost:3000/comentarios?productId=' + searchText)
       .toPromise()
       .then((answer: Evaluation[]) => answer);
   }

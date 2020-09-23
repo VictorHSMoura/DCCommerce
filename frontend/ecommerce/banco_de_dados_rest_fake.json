@@ -84,5 +84,61 @@
           }
         ]
       }
+    ],
+  "comentarios": [
+      {
+        "productId": 1,
+        "texto": "Usei intel por mais de 15 anos, esse é o primeiro processador AMD que adquiri e estou muito satisfeito, desempenho bruto, sobra na maioria dos games, estou gostando do produto e é uma pena o dólar estar tão alto.",
+        "nota": 4,
+        "avaliador": "Davi Braga Tolentino Veloso"
+      },
+      {
+        "productId": 1,
+        "texto": "Produto chegou rápido, tem um ótimo desempenho, utilizo o cooler da própria AMD e supre a minha necessidade no momento.",
+        "nota": 5,
+        "avaliador": "Victor Moura"
+      },
+      {
+        "productId": 1,
+        "texto": "Melhor que já tive! Com o KIT (AMD Ryzen 5 3600X + Asus b450 + SSD Adata XPG Gammix S11 Pro) perfeito!",
+        "nota": 5,
+        "avaliador": "Júlia Fonseca de Sena"
+      },
+      {
+        "productId": 2,
+        "texto": "O SSD chegou antes do previsto, é de ótima qualidade e muito rápido!! Agora meu computador incia e reinicia em menos de 30 segundos e o jogo que coloquei nele (CS:GO) está rodando perfeitamente bem e os loadings muito rápidos também!",
+        "nota": 5,
+        "avaliador": "Júlia Fonseca de Sena"
+      },
+      {
+        "productId": 2,
+        "texto": "O produto não funcionou no meu PC e quando eu fui acionar a garantia pela Kabum não era mais possivel, pois eles dão um prazo muito pequeno, dai tive que acionar a garantia pela propria HP, porem não deu certo, até hoje estou com ssd parado sem funcionar",
+        "nota": 2,
+        "avaliador": "Victor Moura"
+      },
+      {
+        "productId": 2,
+        "texto": "Até o momento estão funcionando corretamente, produto de boa qualidade melhorou bastante o desempenho do computador",
+        "nota": 4,
+        "avaliador": "Thales Aparecido Silva Elias"
+      },
+      {
+        "productId": 4,
+        "texto": "Ótima placa, roda praticamente tudo no ultra em 1080p, e pra quem usa 4K roda alguns games em ultra e outros em qualidade alta.",
+        "nota": 5,
+        "avaliador": "Victor Moura"
+      },
+      {
+        "productId": 4,
+        "texto": "A falta de backplate na placa realmente deixa a desejar no design interno da máquina e deixa os circuitos mais expostos , mas nada que não possa ser resolvido com uma personalizada. o preço bem salgado também",
+        "nota": 3,
+        "avaliador": "Thales Aparecido Silva Elias"
+      },
+      {
+        "productId": 4,
+        "texto": "Não me arrependo de nada.. não fica atrás em nada comparada com a 2080.. excelente.. chegou muito rapido e a placa é top.",
+        "nota": 4,
+        "avaliador": "Davi Braga Tolentino Veloso"
+      }
     ]
 }
