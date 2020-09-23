@@ -11,8 +11,8 @@
                         </div>
                         <div class="other-images">
                             <img class="mini-images card" *ngFor="let image of product.imagens" [src]="image.url" (click)="changeImage(image.url)" width="80px" height="80px">
-                        </div> 
-                        
+                        </div>
+
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -22,8 +22,9 @@
                             <h4 class="product-vendor">{{product.anunciante}}</h4>
                             <hr/>
                         </div>
-                        
+
                         <div class="product-details">
+                            <p class="nota-produto">Nota: <stan class="nota"><span id="nota"></span> / 5</stan></p>
                             <p class="cash-price-detail price">
                                 <span class="cash-price">{{product.valor*.9 | currency:'BRL'}}</span><br/>à vista no boleto
                             </p>
@@ -38,7 +39,7 @@
                                         <div class="col-sm-4 col-md-5 buy-icon">
                                             <img id="cart" src="../../../assets/project/cart.svg" width="35vw" height="35vw">
                                         </div>
-                                        <div class="col-sm-8 col-md-7 buy-text">  
+                                        <div class="col-sm-8 col-md-7 buy-text">
                                             <span class="btn-buy">Comprar</span>
                                         </div>
                                     </div>
@@ -47,6 +48,16 @@
                         </div>
                     </div>
                 </div>
+              <div class="comment-section">
+                <div class="comment-title"><h3>Comentários:</h3></div>
+                <div *ngFor="let comment of comments">
+                  <div class="comment">
+                    <h5>{{comment.avaliador}}</h5>
+                    <h5>Avaliação: {{comment.nota}} / 5 </h5>
+                    <p>{{comment.texto}}</p>
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
         <div class="col-md-1"></div>
