@@ -8,9 +8,9 @@ margin: 8vh 20vw 70vh 20vw">
                 <th>Status do pedido</th>
             </tr>
             <tr *ngFor="let pedido of pedidos">
-                <td><a href="/product/{{pedido.id}}">{{pedido.name}}</a></td>
-                <td>{{pedido.getStatusString()}}<br>
-                <button *ngIf="pedido.status == EstadoItem.Finalizado" class="avaliar" (click)="btnClick(pedido.produtoId)">Avaliar</button></td>
+                <td><a href="/product/{{pedido.MainProduct.id}}">{{pedido.MainProduct.titulo}}</a></td>
+                <td>{{pedido.status}}<br>
+                <button *ngIf="pedido.status == 'Finalizado'" class="avaliar" (click)="btnClick(pedido.MainProduct.id)">Avaliar</button></td>
             </tr>
         </div>
         <ng-template #elseBlock>Seu histórico de pedidos está vazio</ng-template>

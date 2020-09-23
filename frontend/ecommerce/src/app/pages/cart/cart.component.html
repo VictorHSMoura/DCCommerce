@@ -1,5 +1,21 @@
-<p style="font-size: 60px;
-margin-top: 8vh;
-margin-bottom: 70vh;">
-    Carrinho em construção!
-</p>
+<div style="font-size: 1.5em;
+margin: 8vh 5vw 70vh 5vw">
+    <div class="card">
+        <h3>Seus itens:</h3>
+
+        <div *ngFor="let item of products">
+            <div class="box">
+                <div>Produto: {{item.produto.titulo}}</div>
+                <button class="btn btn-danger" (click)="removeFromCart(item.produto)">-</button>
+                <div>Quantidade: {{item.qtd}}</div>
+                <button class="btn btn-success" (click)="addToCart(item.produto)">+</button>
+                <div>Valor do item: {{item.qtd*item.produto.valor | currency:'BRL'}}</div>
+            </div>
+            <br><hr/>
+        </div>
+            <div *ngIf="products.length">Valor total: {{total | currency:'BRL'}}</div>
+            <button *ngIf="products.length" class="btn btn-success" (click)="finishOrder()">Finalizar Compra</button>
+
+        
+    </div>
+</div>

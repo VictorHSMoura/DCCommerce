@@ -1,0 +1,12 @@
+.card {
+    border: 1px #ccc solid;
+    padding: 15px;
+    width: 100%
+}
+
+.box {
+    display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 0 0 100%;
+  }

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ProductListToOrder } from 'src/app/models/product-list-to-order.model';
 import { ProductQtd } from 'src/app/models/product-qtd.model';
 import { MainProduct } from 'src/app/models/product.model';
+import { Pedido } from 'src/app/pages/profile/profile.component';
 
 @Injectable({
   providedIn: 'root'
@@ -61,5 +62,11 @@ export class ChartService {
     return this.http.post('http://localhost:8080/api/pedido', this.listProducts)
       .toPromise()
       .then();
+  }
+
+  public getProductsBySearch(searchText: string): Promise<Pedido[]> {
+    return this.http.get('http://localhost:8080/api/pedido?comprador=' + searchText)
+      .toPromise()
+      .then((answer: Pedido[]) => answer);
   }
 }
