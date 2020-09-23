@@ -65,6 +65,19 @@ a {
     font-size: 1.2em;
 }
 
+.comment-section {
+    width: 50vw;
+    margin-top: 2vh;
+}
+
+.comment-title {
+    border-bottom: lightgray 2px solid;
+}
+
+.comment {
+    margin-top: 1vh;
+    border-bottom: lightgray 1px solid;
+}
 
 // @media only screen and (max-width: 991.98px) {
 //     .btn-buy {
