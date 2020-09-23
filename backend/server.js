@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -18,6 +19,9 @@ app.use(bodyParser.json());
 // Converte as requisções do tipo: content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
+app.use('/images', express.static(path.join(__dirname, 'images')));
+app.use('/', express.static(path.join(__dirname, 'angular')));
 
 // Rota base
 app.get("/", (req, res) => {

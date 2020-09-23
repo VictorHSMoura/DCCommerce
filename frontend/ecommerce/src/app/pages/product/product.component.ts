@@ -26,7 +26,7 @@ export class ProductComponent implements OnInit {
         .then((product: MainProduct) => {
           this.product = product;
           if(product !== undefined){
-            this.mainImage = product.imagens[0].url;
+            this.mainImage = product.urlFoto;
           }
         });
 
@@ -37,7 +37,7 @@ export class ProductComponent implements OnInit {
         comments.forEach(a => count += 1);
         comments.forEach(a => this.avaliacao += Number(a.nota));
         this.avaliacao = Math.round((this.avaliacao / count)*10)/10;
-        document.getElementById("nota").innerHTML = this.avaliacao;
+        document.getElementById("nota").innerHTML = this.avaliacao.toString();
       });
 
 

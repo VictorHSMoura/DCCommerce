@@ -13,6 +13,8 @@ exports.create = (req, res) => {
   }
 
   // Criar um produto
+  const url = req.protocol + '://' + req.get('host');
+  const path = url + "/images/" + req.file.filename;
   const product = {
     id: req.body.id,
     categoria: req.body.categoria,
@@ -21,7 +23,8 @@ exports.create = (req, res) => {
     valor: req.body.valor,
     anunciante: req.body.anunciante,
     destaque: req.body.destaque,
-
+    anunciante_email: req.body.anunciante_email,
+    urlFoto: path
   };
 
   // Salvar produto no banco
@@ -43,10 +46,12 @@ function criaParametroFiltroQuery(req) {
     Object.assign(where, { descricao_oferta: { [Op.like]: `%${req.query.descricao_oferta}%` } });
   if (req.query.categoria)
     Object.assign(where, { categoria: { [Op.like]: `%${req.query.categoria}%` } });
-  if (req.query.titulo)
-    Object.assign(where, { titulo: { [Op.like]: `%${req.query.titulo}%` } });
+  if (req.query.titulo_like)
+    Object.assign(where, { titulo: { [Op.like]: `%${req.query.titulo_like}%` } });
   if (req.query.anunciante)
     Object.assign(where, { anunciante: { [Op.like]: `%${req.query.anunciante}%` } });
+  if (req.query.anunciante_email)
+    Object.assign(where, { anunciante_email: { [Op.like]: `%${req.query.anunciante_email}%` } });
   if (req.query.valor)
     Object.assign(where, { valor: req.query.valor });
   if (req.query.destaque)

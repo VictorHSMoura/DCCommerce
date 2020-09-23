@@ -75,7 +75,7 @@ export class EvaluationComponent implements OnInit {
         .then((product: MainProduct) => {
           this.product = product;
           if(product !== undefined){
-            this.mainImage = product.imagens[0].url;
+            this.mainImage = product.urlFoto;
           }
         });
     });

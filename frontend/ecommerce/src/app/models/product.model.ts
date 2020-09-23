@@ -9,7 +9,7 @@ export class Product {
         public anunciante: string,
         public anunciante_email: string,
         public destaque: boolean,
-        public imagens: any
+        public urlFoto: string
     ) {}
 }
 
@@ -23,8 +23,8 @@ export class MainProduct extends Product {
         anunciante: string,
         anunciante_email: string,
         destaque: boolean,
-        imagens: any
+        urlFoto: any,
     ){
-        super(categoria, titulo, descricao_oferta, valor, anunciante, anunciante_email, destaque, imagens);
+        super(categoria, titulo, descricao_oferta, valor, anunciante, anunciante_email, destaque, urlFoto);
     }
 }

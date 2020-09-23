@@ -6,6 +6,9 @@ module.exports = (sequelize, Sequelize) => {
     anunciante: {
       type: Sequelize.STRING
     },
+    anunciante_email: {
+      type: Sequelize.STRING
+    },
     categoria: {
       type: Sequelize.STRING
     },
@@ -17,7 +20,10 @@ module.exports = (sequelize, Sequelize) => {
     },
     valor: {
       type: Sequelize.FLOAT
-    },
+    }, 
+    urlFoto: {
+      type: Sequelize.STRING
+    }
   });
 
   MainProduct.associate = function(models) {

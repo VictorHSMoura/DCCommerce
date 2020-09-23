@@ -11,6 +11,7 @@ export class EvaluationService {
 
 
   public getEvaluationBySearch(searchText: string): Promise<Evaluation[]> {
+    // para rodar no nosso backend mudar rota para: http://localhost:8080/api/comentario?produtoId'
     return this.http.get('http://localhost:3000/comentarios?productId=' + searchText)
       .toPromise()
       .then((answer: Evaluation[]) => answer);

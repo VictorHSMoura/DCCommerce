@@ -4,7 +4,7 @@
             <div class="product-card d-flex flex-column h-100">
                 <div class="product-info">
                     <a [routerLink]="['/product', product.id]">
-                        <img class="product-image" [src]="product.imagens[0].url">
+                        <img class="product-image" [src]="product.urlFoto">
                         <h4 class="product-name">{{product.titulo}}</h4>
                     </a>
                 </div>
@@ -22,8 +22,8 @@
                             <button class="btn btn-success btn-product-details" [routerLink]="['/product', product.id]">Detalhes</button>
                         </div>
                         <div class="col-sm-4 buttons-details">
-                            <button class="btn btn-success btn-block btn-product-details">
-                                <a routerLink="/cart">
+                            <button class="btn btn-success btn-block btn-product-details" (click)="adicionarCarrinho(product)">
+                                <a>
                                     <img src="../../../assets/project/cart.svg" width="100%" height="100%">
                                 </a>
                             </button>

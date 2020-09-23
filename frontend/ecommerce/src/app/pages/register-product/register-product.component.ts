@@ -1,8 +1,10 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToasterService } from 'angular2-toaster';
-import { Product } from 'src/app/models/product.model';
+import { MainProduct, Product } from 'src/app/models/product.model';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { ProductService } from 'src/app/services/product/product.service';
 import { CATEGORIES } from '../../models/consts/categories';
 
 @Component({
@@ -21,7 +23,9 @@ export class RegisterProductComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private toasterService: ToasterService,
-    private authService: AuthService
+    private authService: AuthService,
+    private productService: ProductService,
+    private router: Router
   ) { }
 
   public async cadastrar(): Promise<void> {
@@ -38,7 +42,15 @@ export class RegisterProductComponent implements OnInit {
         false,
         this.registerProductForm.value.imagens
       )
-      console.log(product);
+
+      this.productService.postProduct(product, this.registerProductForm.value.imagens, this.authService.getUserEmail())
+      .then((products: MainProduct) => {
+        this.router.navigate(['/product', products.id]);
+      })
+      .catch((param: any) => {
+        this.toasterService.pop('error', 'Algum erro ocorreu', 'Tente novamente mais tarde');
+      });
+
     } catch (e) {
       this.toasterService.pop('error', 'Erro no cadastro', 'Confira os dados digitados ou tente novamente mais tarde');
       console.log('login error', e);
@@ -64,8 +76,7 @@ export class RegisterProductComponent implements OnInit {
 
   public teste(image: any): void {
     const files = image.files;
-    this.registerProductForm.value.imagens = files;
-    console.log(this.registerProductForm.value.imagens);
+    this.registerProductForm.value.imagens = files[0];
   }
 
 }

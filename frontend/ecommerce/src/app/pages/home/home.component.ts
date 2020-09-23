@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToasterService } from 'angular2-toaster';
 import { MainProduct } from 'src/app/models/product.model';
+import { ChartService } from 'src/app/services/chart/chart.service';
 import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
@@ -15,7 +17,9 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private toasterService: ToasterService
+    private toasterService: ToasterService,
+    private chartService: ChartService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -27,6 +31,11 @@ export class HomeComponent implements OnInit {
       .catch((param: any) => {
         this.toasterService.pop('error', 'Algum erro ocorreu', 'Tente novamente mais tarde');
       });
+  }
+
+  adicionarCarrinho(produto) {
+    this.chartService.addProductToChart(produto);
+    this.router.navigate(['cart'])
   }
 
 }
