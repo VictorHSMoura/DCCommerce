@@ -33,9 +33,9 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  adicionarCarrinho(produto) {
+  public adicionarCarrinho(produto): void {
     this.chartService.addProductToChart(produto);
-    this.router.navigate(['cart'])
+    this.router.navigate(['cart']);
   }
 
 }

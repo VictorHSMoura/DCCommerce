@@ -37,7 +37,7 @@ export class EvaluationComponent implements OnInit {
     try {
       const value = this.evaluationForm.value;
 
-      const evaluation = new Evaluation(1, this.evaluationForm.value.comentario, this.evaluationForm.value.stars, this.userName);
+      const evaluation = new Evaluation(this.product.id, this.evaluationForm.value.comentario, this.evaluationForm.value.stars, this.userName);
       
       this.evaluationService.postEvaluation(evaluation)
         .then((evaluation: Evaluation) => {

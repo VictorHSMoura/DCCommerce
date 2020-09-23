@@ -9,4 +9,19 @@
   flex-direction: row;
   justify-content: space-between;
   flex: 0 0 100%;
-  }
+}
+
+.product-image {
+    width: 60%;
+    text-align: center;
+}
+
+.quantity {
+    display: inline;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.quantities, .value {
+    padding: 0;
+}

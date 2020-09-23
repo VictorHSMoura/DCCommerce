@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
       };
       console.log(user);
       this.store.dispatch(setLoggedUser({ user }));
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['profile']);
     } catch (e) {
       this.toasterService.pop('error', 'Erro no registro', 'Confira suas credenciais ou tente novamente mais tarde');
       console.log('login error', e);

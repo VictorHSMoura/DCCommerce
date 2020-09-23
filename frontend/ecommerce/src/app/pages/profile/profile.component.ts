@@ -41,6 +41,7 @@ export class Pedido {
 export class ProfileComponent implements OnInit {
   EstadoItem: typeof EstadoItem = EstadoItem; // precisa disso pra conseguir acessar o enum no html '-'
   pedidos = []
+  public username: string;
 
   constructor(private router: Router, private chartService: ChartService, private authService: AuthService) { }
 
@@ -49,7 +50,8 @@ export class ProfileComponent implements OnInit {
     this.chartService.getProductsBySearch(this.authService.getUserEmail()).then(data => {
       this.pedidos = data
     })
-
+    this.username = this.authService.getUserName();
+    console.log(this.username);
   }
 
   btnClick(produtoId) {

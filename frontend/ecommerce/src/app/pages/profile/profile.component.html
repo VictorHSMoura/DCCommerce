@@ -1,5 +1,8 @@
 <div style="font-size: 1.5em;
 margin: 8vh 20vw 70vh 20vw">
+    <h2 class="username">Seja bem vindo(a), {{username}}</h2>
+    <hr/>
+
     <h3>Seus pedidos:</h3>
     <table>
         <div *ngIf="pedidos.length; else elseBlock">

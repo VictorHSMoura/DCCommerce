@@ -7,7 +7,7 @@
                     <div class="card h-100">
                         <div class="main-image">
                             <img class="product-image" [src]="mainImage">
-                            <hr/>
+                            <!-- <hr/> -->
                         </div>
                         <!--<div class="other-images">
                             <img class="mini-images card" *ngFor="let image of product.imagens" [src]="image.url" (click)="changeImage(image.url)" width="80px" height="80px">
@@ -24,7 +24,7 @@
                         </div>
 
                         <div class="product-details">
-                            <p class="nota-produto">Nota: <stan class="nota"><span id="nota"></span> / 5</stan></p>
+                            <p class="nota-produto">Nota: <span class="nota"><span id="nota">{{avaliacao}}</span> / 5</span></p>
                             <p class="cash-price-detail price">
                                 <span class="cash-price">{{product.valor*.9 | currency:'BRL'}}</span><br/>à vista no boleto
                             </p>
@@ -33,7 +33,7 @@
                             </p>
                         </div>
                         <div class="product-buttons">
-                            <button class="btn btn-success btn-block btn-product-details">
+                            <button class="btn btn-success btn-block btn-product-details" (click)="adicionarCarrinho(product)">
                                 <a routerLink="/cart">
                                     <div class="row">
                                         <div class="col-sm-4 col-md-5 buy-icon">
@@ -48,16 +48,20 @@
                         </div>
                     </div>
                 </div>
-              <div class="comment-section">
-                <div class="comment-title"><h3>Comentários:</h3></div>
-                <div *ngFor="let comment of comments">
-                  <div class="comment">
-                    <h5>{{comment.avaliador}}</h5>
-                    <h5>Avaliação: {{comment.nota}} / 5 </h5>
-                    <p>{{comment.texto}}</p>
-                  </div>
+                <div class="description">
+                    <h3 class="comment-title">Descrição</h3>
+                    <p>{{product.descricao_oferta}}</p>
                 </div>
-              </div>
+                <div class="comment-section">
+                    <div class="comment-title"><h3>Comentários:</h3></div>
+                    <div *ngFor="let comment of comments">
+                        <div class="comment">
+                            <h5>{{comment.avaliador}}</h5>
+                            <h5>Avaliação: {{comment.nota}} / 5 </h5>
+                            <p>{{comment.texto}}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-md-1"></div>
