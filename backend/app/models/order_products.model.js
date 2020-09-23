@@ -5,8 +5,8 @@ module.exports = (sequelize, Sequelize, db) => {
     }
   });
 
-  db.product.belongsToMany(db.order, { through: OrderProducts })
-  db.order.belongsToMany(db.product, { through: OrderProducts })
+//  db.product.belongsToMany(db.order, { through: OrderProducts })
+//  db.order.belongsToMany(db.product, { through: OrderProducts })
   
   return OrderProducts;
 };

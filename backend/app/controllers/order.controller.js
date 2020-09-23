@@ -14,28 +14,32 @@ exports.create = (req, res) => {
     return;
   }
 
+  console.log(req.body.produtoQtdLista)
   // Criar um pedido
-  const order = {
-    comprador: req.body.comprador,
-  };
+  
+  const orderList = [];
 
+  req.body.produtoQtdLista.forEach(productQtd => {
+    const order = {
+      comprador: req.body.compradorEmail,
+      MainProductId: productQtd.produto.id,
+      qtd: productQtd.qtd,
+      status: "Finalizado"
+    };
+
+    orderList.push(order);
+
+  });
+  
+  console.log(orderList);
 
   // Salvar pedido no banco
-  Order.create(order)
+  Order.bulkCreate(orderList)
     .then(data => {
 
-      req.body.itens.forEach(product => {
-        product.orderId = data.id
-      })
-
-      OrderProducts.bulkCreate(req.body.itens).then(newData => {
+      
         res.send(data);
-      }).catch(err => {
-        res.status(500).send({
-          message:
-            err.message || "Algum erro ocorreu ao salvar."
-        });
-      });
+      
       
     })
     .catch(err => {
@@ -57,7 +61,9 @@ function criaParametroFiltroQuery(req) {
 // Listar todos os pedidos do banco.
 exports.findAll = (req, res) => {
   var condition = criaParametroFiltroQuery(req);
-  Order.findAll({ where: condition })
+  Order.findAll({ where: condition, include: [
+    { model: db.product }
+] })
     .then(data => {
       res.send(data);
     })

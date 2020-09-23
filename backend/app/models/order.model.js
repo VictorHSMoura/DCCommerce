@@ -6,9 +6,13 @@ module.exports = (sequelize, Sequelize, db) => {
     status: {
       type: Sequelize.STRING
     },
+    qtd: {
+      type: Sequelize.INTEGER
+    },
   });
-  Order.associate = function(models) {
-    Order.belongsToMany(models.Products, {through: 'OrderProducts', foreignKey: 'orderId', as: 'products'})
-  };
+
+  db.product.hasMany(Order);
+  Order.belongsTo(db.product);
+
   return Order;
 };
