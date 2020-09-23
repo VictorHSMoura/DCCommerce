@@ -1,0 +1,50 @@
+<header class="page-header">
+  <nav class="navbar bars-gradient navbar-expand-lg navbar-light bg-light" id="main-navbar">
+    <a class="navbar-brand" [routerLink]="['']">
+      <img src="assets/project/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+      DCC-Ecommerce
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="d-flex align-items-center justify-content-between w-100 navbar-nav mr-auto">
+        <li class="nav-item">
+          <!-- <a class="d-flex align-items-center nav-link" [routerLink]="['/register-product']">
+            <img src="assets/project/bag.svg" width="30" height="30" class="margin-right d-inline-block align-top" alt="">
+            Cadastrar produtos
+          </a> -->
+          <form class="form-search" [formGroup]="searchForm" (ngSubmit)="search()">
+            <input type="text" formControlName="search" id="inputForm" height="30">
+            <button class="fa fa-search btn-sm" height="30" aria-hidden="true" type="submit"></button>
+          </form>
+        </li>
+        <li class="nav-item">
+          <a class="d-flex align-items-center nav-link" [routerLink]="['/cart']">
+            <img src="assets/project/cart.svg" width="30" height="30" class="margin-right d-inline-block align-top" alt="">
+            Meu carrinho
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="d-flex align-items-center nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="assets/project/user.svg" width="30" height="30" class="margin-right d-inline-block align-top" alt="">
+            Informações do usuário
+          </a>
+          <div class="dropdown-menu" aria-labelledby="userDropdown">
+            <ng-container *ngIf="loggedUser$ | async; else login">
+              <a class="dropdown-item" [routerLink]="['/profile']" href="javascript:void(0)">Perfil</a>
+              <a class="dropdown-item" [routerLink]="['/register-product']" href="javascript:void(0)">Cadastrar Produtos</a>
+              <a class="dropdown-item" (click)="logout()" href="javascript:void(0)">Sair</a>
+            </ng-container>
+            <ng-template #login>
+              <a class="dropdown-item" [routerLink]="['/login']" href="javascript:void(0)">Entrar</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" [routerLink]="['/register']" href="javascript:void(0)">Registrar</a>  
+            </ng-template>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

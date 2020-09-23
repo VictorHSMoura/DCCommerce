@@ -1,0 +1,28 @@
+<div style="font-size: 1.5em;
+margin: 8vh 5vw 70vh 5vw">
+    <div class="card">
+        <h3>Seus itens:</h3>
+
+        <div *ngFor="let item of products">
+            <div class="box row">
+                <div class="col-md-2">
+                    <img class="product-image" [src]="item.produto.urlFoto">
+                </div>
+                <div class="col-md-10 row">
+                    <div>Produto: {{item.produto.titulo}}</div>
+                    <div class="quantities col-md-6 d-flex justify-content-start">
+                        <button class="btn btn-danger" (click)="removeFromCart(item.produto)">-</button>
+                        <div class="quantity">Quantidade: {{item.qtd}}</div>
+                        <button class="btn btn-success" (click)="addToCart(item.produto)">+</button>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-end">Valor do item: {{item.qtd*item.produto.valor | currency:'BRL'}}</div>
+                </div>
+            </div>
+            <br><hr/>
+        </div>
+            <div *ngIf="products.length">Valor total: {{total | currency:'BRL'}}</div>
+            <button *ngIf="products.length" class="btn btn-success" (click)="finishOrder()">Finalizar Compra</button>
+
+        
+    </div>
+</div>

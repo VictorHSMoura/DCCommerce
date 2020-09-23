@@ -1,0 +1,25 @@
+th { 
+    background-color:rgb(174, 181, 190);
+} 
+th, td {
+    text-align:center; 
+    border:1px solid black; 
+    padding:3vw
+}
+
+.avaliar {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 1vh 2vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 8px;
+    margin-top: 1vh;
+}
+
+.username {
+    margin-bottom: 15px;
+}

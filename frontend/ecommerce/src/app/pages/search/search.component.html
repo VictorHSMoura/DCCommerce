@@ -1,0 +1,38 @@
+<div class="container" *ngIf="products != undefined">
+    <h2 class="search-header">Resultado da busca por {{searchText}}</h2>
+    <div class="row">
+        <div *ngFor="let product of products" class="col-md-3 col-sm-6 product-div">
+            <div class="product-card d-flex flex-column h-100">
+                <div class="product-info">
+                    <a [routerLink]="['/product', product.id]">
+                        <img class="product-image" [src]="product.urlFoto">
+                        <h4 class="product-name">{{product.titulo}}</h4>
+                    </a>
+                </div>
+                <div class="product-details">
+                    <p class="cash-price-detail price">
+                        <span class="cash-price">{{product.valor*.9 | currency:'BRL'}}</span> à vista no boleto
+                    </p>
+                    <p class="credit-card-price-detail price">
+                        <span class="card-price">12x de {{product.valor / 12 | currency:'BRL'}}</span> sem juros
+                    </p>
+                </div>
+                <div class="product-buttons">
+                    <div class="row">
+                        <div class="col-sm-8 buttons-details">
+                            <button class="btn btn-success btn-product-details" [routerLink]="['/product', product.id]">Detalhes</button>
+                        </div>
+                        <div class="col-sm-4 buttons-details">
+                            <button class="btn btn-success btn-block btn-product-details">
+                                <a routerLink="/cart">
+                                    <img src="../../../assets/project/cart.svg" width="100%" height="100%">
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

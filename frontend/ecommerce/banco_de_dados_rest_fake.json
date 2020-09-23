@@ -1,0 +1,144 @@
+{
+    "ofertas": [
+      {
+        "id": 1,
+        "categoria": "processadores",
+        "titulo": "Processador AMD Ryzen 5 3600X Cache 32MB 3.8GHz (4.4GHz Max Turbo) AM4, Sem Vídeo - 100-100000022BOX ",
+        "descricao_oferta": "A arquitetura Zen 2 do núcleo de alto desempenho da AMD permite que os Processadores de 3ª geração Ryzen ofereçam o mais alto desempenho para uma ou múltiplas linhas de execução e de qualquer Processador de desktop convencional.",
+        "valor": 1499.9,
+        "anunciante": "Thales Aparecido Silva Elias",
+        "anunciante_email": "thales.a.elias@gmail.com",
+        "destaque": true,
+        "imagens": [
+          {
+            "url": "/assets/produtos/1/img1.jpg"
+          },
+          {
+            "url": "/assets/produtos/1/img2.jpg"
+          },
+          {
+            "url": "/assets/produtos/1/img3.jpg"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "categoria": "SSD",
+        "titulo": "SSD HP S700, 120GB, SATA, Leituras: 500Mb/s e Gravações: 480Mb/s - 2DP97AA#ABL",
+        "descricao_oferta": "Projetado para aumentar a velocidade de resposta de notebooks e desktops, o HP S700 SSD fornece alta velocidade para inicialização, carregamento e transmissão, acelera de maneira abrangente o sistema e traz uma experiência de operação suave e responsiva.",
+        "valor": 189.9,
+        "anunciante": "Davi Braga Tolentino Veloso",
+        "anunciante_email": "philipsdvd2000@gmail.com",
+        "destaque": false,
+        "imagens": [
+          {
+            "url": "/assets/produtos/2/img1.jpg"
+          },
+          {
+            "url": "/assets/produtos/2/img2.jpg"
+          },
+          {
+            "url": "/assets/produtos/2/img3.jpg"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "categoria": "restaurante",
+        "titulo": "Mochila HP Commuter, para Notebook até 15.6´, Resistente à Água, Preta - 5EE91AA#ABL",
+        "descricao_oferta": "Esta mochila desportiva com fecho de correr disponibiliza acesso fácil ao seu equipamento mais importante a sua tecnologia, para que tenha tudo sempre à mão.",
+        "valor": 179.9,
+        "anunciante": "Victor Moura",
+        "anunciante_email": "victorhugosmoura@gmail.com",
+        "destaque": false,
+        "imagens": [
+          {
+            "url": "/assets/produtos/3/img1.jpg"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "categoria": "placa de vídeo",
+        "titulo": "Placa de Vídeo EVGA NVIDIA GeForce RTX 2070 Super KO Gaming, 8GB, GDDR6 - 08G-P4-2072-KR",
+        "descricao_oferta": "A EVGA está de volta ao ringue com as novas EVGA GeForce RTX 2070 Super KO Edition. A placa GeForce RTX Super oferece tudo que você precisa para dominar seu game favorito. É equipada com a arquitetura de Turing e apresenta clocks e núcleos mais altos.",
+        "anunciante": "Júlia Fonseca de Sena",
+        "anunciante_email": "jufs128@gmail.com",
+        "valor": 3599.9,
+        "destaque": true,
+        "imagens": [
+          {
+            "url": "/assets/produtos/4/img1.jpg"
+          },
+          {
+            "url": "/assets/produtos/4/img2.jpg"
+          },
+          {
+            "url": "/assets/produtos/4/img3.jpg"
+          },
+          {
+            "url": "/assets/produtos/4/img4.jpg"
+          },
+          {
+            "url": "/assets/produtos/4/img5.jpg"
+          }
+        ]
+      }
+    ],
+  "comentarios": [
+      {
+        "productId": 1,
+        "texto": "Usei intel por mais de 15 anos, esse é o primeiro processador AMD que adquiri e estou muito satisfeito, desempenho bruto, sobra na maioria dos games, estou gostando do produto e é uma pena o dólar estar tão alto.",
+        "nota": 4,
+        "avaliador": "Davi Braga Tolentino Veloso"
+      },
+      {
+        "productId": 1,
+        "texto": "Produto chegou rápido, tem um ótimo desempenho, utilizo o cooler da própria AMD e supre a minha necessidade no momento.",
+        "nota": 5,
+        "avaliador": "Victor Moura"
+      },
+      {
+        "productId": 1,
+        "texto": "Melhor que já tive! Com o KIT (AMD Ryzen 5 3600X + Asus b450 + SSD Adata XPG Gammix S11 Pro) perfeito!",
+        "nota": 5,
+        "avaliador": "Júlia Fonseca de Sena"
+      },
+      {
+        "productId": 2,
+        "texto": "O SSD chegou antes do previsto, é de ótima qualidade e muito rápido!! Agora meu computador incia e reinicia em menos de 30 segundos e o jogo que coloquei nele (CS:GO) está rodando perfeitamente bem e os loadings muito rápidos também!",
+        "nota": 5,
+        "avaliador": "Júlia Fonseca de Sena"
+      },
+      {
+        "productId": 2,
+        "texto": "O produto não funcionou no meu PC e quando eu fui acionar a garantia pela Kabum não era mais possivel, pois eles dão um prazo muito pequeno, dai tive que acionar a garantia pela propria HP, porem não deu certo, até hoje estou com ssd parado sem funcionar",
+        "nota": 2,
+        "avaliador": "Victor Moura"
+      },
+      {
+        "productId": 2,
+        "texto": "Até o momento estão funcionando corretamente, produto de boa qualidade melhorou bastante o desempenho do computador",
+        "nota": 4,
+        "avaliador": "Thales Aparecido Silva Elias"
+      },
+      {
+        "productId": 4,
+        "texto": "Ótima placa, roda praticamente tudo no ultra em 1080p, e pra quem usa 4K roda alguns games em ultra e outros em qualidade alta.",
+        "nota": 5,
+        "avaliador": "Victor Moura"
+      },
+      {
+        "productId": 4,
+        "texto": "A falta de backplate na placa realmente deixa a desejar no design interno da máquina e deixa os circuitos mais expostos , mas nada que não possa ser resolvido com uma personalizada. o preço bem salgado também",
+        "nota": 3,
+        "avaliador": "Thales Aparecido Silva Elias"
+      },
+      {
+        "productId": 4,
+        "texto": "Não me arrependo de nada.. não fica atrás em nada comparada com a 2080.. excelente.. chegou muito rapido e a placa é top.",
+        "nota": 4,
+        "avaliador": "Davi Braga Tolentino Veloso"
+      }
+    ]
+}

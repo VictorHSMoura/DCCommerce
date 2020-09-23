@@ -1,0 +1,103 @@
+.container{
+    min-height: 80vh;
+}
+
+.product-image {
+    width: 100%;
+}
+
+.mini-images {
+    position: relative;
+    float: left;
+    margin-right: 10px;
+}
+
+.subcontainer {
+    padding: 25px;
+}
+
+.card {
+    border: 1px #ccc solid;
+    padding: 15px;
+}
+
+.product-info {
+    margin-bottom: 50px;
+}
+
+a {
+    padding: 0;
+}
+
+.btn-buy {
+    font-size: 2vh;  
+}
+
+.buy-icon {
+    text-align: center;
+}
+
+.buy-text {
+    text-align: left;
+    border-left: white 1px solid;
+}
+
+.btn {
+    // text-align: left;
+    height: 4vw;
+}
+
+.cash-price-detail {
+    color: #28a745;
+    font-size: 1.5em;
+}
+
+.cash-price {
+    font-size: 1.2em;
+}
+
+.credit-card-price-detail {
+    color: orangered;
+    font-size: 1.3em;
+}
+
+.card-price {
+    font-size: 1.2em;
+}
+
+.nota-produto {
+    color: #D7BE69;
+    font-size: 1.5em;
+}
+
+.description {
+    margin-top: 2vh;
+}
+
+.comment-section {
+    width: 50vw;
+    margin-top: 2vh;
+}
+
+.comment-title {
+    border-bottom: lightgray 2px solid;
+}
+
+.comment {
+    margin-top: 1vh;
+    border-bottom: lightgray 1px solid;
+}
+
+// @media only screen and (max-width: 991.98px) {
+//     .btn-buy {
+//         font-size: 1.5em;
+//         padding-left: 10%;
+//     }
+// }
+
+// @media only screen and (max-width: 767.98px) {
+//     .btn-buy {
+//         font-size: 2.1em;
+//         padding-left: 10%;
+//     }
+// }

@@ -1,0 +1,21 @@
+<div style="font-size: 1.5em;
+margin: 8vh 20vw 70vh 20vw">
+    <h2 class="username">Seja bem vindo(a), {{username}}</h2>
+    <hr/>
+
+    <h3>Seus pedidos:</h3>
+    <table>
+        <div *ngIf="pedidos.length; else elseBlock">
+            <tr>
+                <th>Produto (clique para ver detalhes)</th>
+                <th>Status do pedido</th>
+            </tr>
+            <tr *ngFor="let pedido of pedidos">
+                <td><a href="/product/{{pedido.MainProduct.id}}">{{pedido.MainProduct.titulo}}</a></td>
+                <td>{{pedido.status}}<br>
+                <button *ngIf="pedido.status == 'Finalizado'" class="avaliar" (click)="btnClick(pedido.MainProduct.id)">Avaliar</button></td>
+            </tr>
+        </div>
+        <ng-template #elseBlock>Seu histórico de pedidos está vazio</ng-template>
+    </table>
+</div>
